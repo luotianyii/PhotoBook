@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>PhotoBook</title>
+		<link rel="stylesheet" type="text/css" media="screen,print" href="css/total.css" />
+        <style>
+        .picture {
+        border: 1px solid black;
+        }
+        </style>
+	</head>
+	<body>
+		<div id="header"><h3>PhotoBook</h3></div>
+		<div id="outer">			
+			<div id="inner">
+				<div id="controls">
+					<button type="button" id="uploadButton"  style="width:70px; height:30px" >上传</button>
+					<button type="button" id="deleteButton"  style="width:70px; height:30px" >删除</button>
+					<div id=thumbnail>
+						
+					</div>
+				</div>
+				<div id="appear">
+					
+					<button type="button" id="enlargeButton"   style="width:50px; height:30px" >+</button>
+					
+					<button type="button" id="reduceButton"  style="width:50px; height:30px" >-</button>
+					<div id="box">
+						<div id="can">
+					<canvas id="whiteSpace1"  width="250px" height="250px" >
+						
+					</canvas>
+					</div>
+					<script>
+		
+			var can = document.getElementById("whiteSpace1");	
+			var cxt = can.getContext("2d");
+			
+			var imgs = new Image();
+			imgs.src = "img/bd5ab362c2638f450f74a4d3f215274a.jpg";
+			imgs.onload = drawImg;//图片加载完成再执行
+			function drawImg(){
+				cxt.drawImage(imgs,0,0,can.width,can.height);
+			}
+		</script>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
