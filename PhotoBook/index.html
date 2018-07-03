@@ -4,7 +4,8 @@
 		<meta charset="utf-8" />
 		<title>PhotoBook</title>
 		<link rel="stylesheet" type="text/css" media="screen,print" href="css/total.css" />
-        <style>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<style>
         .picture {
         border: 1px solid black;
         }
@@ -15,10 +16,14 @@
 		<div id="outer">			
 			<div id="inner">
 				<div id="controls">
-					<button type="button" id="uploadButton"  style="width:70px; height:30px" >上传</button>
-					<button type="button" id="deleteButton"  style="width:70px; height:30px" >删除</button>
+					<!--button type="button" id="uploadButton"  style="width:70px; height:30px" >上传</button-->
+					<!--button type="button" id="deleteButton"  style="width:70px; height:30px" >删除</button-->
 					<div id=thumbnail>
-						
+						<form>
+							<input type="file" onchange='PreviewImage(this)' />
+						</form>
+						<!-- 图片展示容器 -->
+						<div class="img-cont"></div>
 					</div>
 				</div>
 				<div id="appear">
@@ -34,16 +39,18 @@
 					</div>
 					<script>
 		
-			var can = document.getElementById("whiteSpace1");	
-			var cxt = can.getContext("2d");
-			
-			var imgs = new Image();
-			imgs.src = "img/bd5ab362c2638f450f74a4d3f215274a.jpg";
-			imgs.onload = drawImg;//图片加载完成再执行
-			function drawImg(){
-				cxt.drawImage(imgs,0,0,can.width,can.height);
-			}
-		</script>
+							var can = document.getElementById("whiteSpace1");
+							var cxt = can.getContext("2d");
+
+							var imgs = new Image();
+							imgs.src = "img/bd5ab362c2638f450f74a4d3f215274a.jpg";
+							imgs.onload = drawImg;//图片加载完成再执行
+							function drawImg(){
+								cxt.drawImage(imgs,0,0,can.width,can.height);
+							}
+						</script>
+						<script  src="js/jquery-1.11.3.min.js"></script>
+						<script  src="js/index.js"></script>
 
 					</div>
 				</div>
