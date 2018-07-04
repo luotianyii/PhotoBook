@@ -10,7 +10,8 @@ function PreviewImage(imgFile) {
        var path;
        //添加显示图片的HTML元素
        id += 1;
-       $(".img-cont").append("<div><div id='"+id+"'><img src='' /></div><a class='hide delete-btn'>删除</a></div>");
+       $(".img-cont").append("<div><div id='"+id+"'><img src='' /></div><a class='hide delete-btn'>删除</a><a class='hide add-btn'>添加</a></div>");
+       
        //判断浏览器类型
        if(document.all){ 
        //兼容IE

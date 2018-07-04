@@ -1,23 +1,104 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
 		<title>PhotoBook</title>
 		<link rel="stylesheet" type="text/css" media="screen,print" href="css/total.css" />
 		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="css/form.css">
 		<style>
-        .picture {
-        border: 1px solid black;
-        }
-        </style>
+			.picture {
+				border: 1px solid black;
+			}
+		</style>
 	</head>
+
 	<body>
-		<div id="header"><h3>PhotoBook</h3></div>
-		<div id="outer">			
+		<div id="header">
+			<h3>PhotoBook</h3></div>
+		<div id="outer">
 			<div id="inner">
 				<div id="controls">
-					<!--button type="button" id="uploadButton"  style="width:70px; height:30px" >上传</button-->
-					<!--button type="button" id="deleteButton"  style="width:70px; height:30px" >删除</button-->
+					<!--<script type="text/javascript">
+						var i = 0;
+						//显示和隐藏子菜单
+						function showAndhideSubMenu(li) {
+							var subMenu = li.getElementsByTagName("ul")[0];
+							var liLeft = li.offsetLeft;
+							var liTop = li.offsetTop;
+							if(subMenu.style.display == "block") {
+								subMenu.style.display = "none";
+							} else {
+								var child;
+								var m = 0;
+								for(var i = 0; i < li.parentElement.childElementCount; i++) {
+									child = li.parentElement.getElementsByTagName("li")[m].getElementsByTagName("ul")[0];
+									child.style.display = "none";
+									count = child.childElementCount;
+									m += count + 1;
+								}
+								subMenu.style.display = "block";
+								subMenu.style.left = 0 - liLeft + "px";
+								subMenu.style.top = 150 - liTop + "px";
+							}
+						}
+					</script>
+					<ul id="navigation">
+						<li onmousedown="showAndhideSubMenu(this)">
+							<a href="#">文字</a>
+							<ul id="ul">
+								<li>
+									<a href="#">文字1</a>
+								</li>
+								<li>
+									<a href="#">文字2</a>
+								</li>
+								<li>
+									<a href="#">文字3</a>
+								</li>
+								<li>
+									<a href="#">文字4</a>
+								</li>
+								<li>
+									<a href="#">文字5</a>
+								</li>
+							</ul>
+						</li>
+						<li onmousedown="showAndhideSubMenu(this)">
+							<a href="#">装饰</a>
+							<ul id="ul">
+								<li>
+									<a href="#">装饰1</a>
+								</li>
+								<li>
+									<a href="#">装饰2</a>
+								</li>
+								<li>
+									<a href="#">装饰3</a>
+								</li>
+								<li>
+									<a href="#">装饰4</a>
+								</li>
+								<li>
+									<a href="#">装饰5</a>
+								</li>
+							</ul>
+						</li>
+
+						<li onmousedown="showAndhideSubMenu(this)">
+							<a href="#">照片</a>
+							<ul id="ul">
+								<li>
+									<a href="#">添加照片</a>
+								</li>
+								<li>
+									<a href="#">快速排版</a>
+								</li>
+							</ul>
+
+						</li>
+					</ul>-->
 					<div id=thumbnail>
 						<form>
 							<input type="file" onchange='PreviewImage(this)' />
@@ -28,33 +109,17 @@
 				</div>
 				<div id="appear">
 					
-					<button type="button" id="enlargeButton"   style="width:50px; height:30px" >+</button>
 					
-					<button type="button" id="reduceButton"  style="width:50px; height:30px" >-</button>
 					<div id="box">
-						<div id="can">
-					<canvas id="whiteSpace1"  width="250px" height="250px" >
+						<iframe src="appear.html" width="800px" height="800px" scrolling="no" frameborder="0"></iframe>
 						
-					</canvas>
-					</div>
-					<script>
-		
-							var can = document.getElementById("whiteSpace1");
-							var cxt = can.getContext("2d");
-
-							var imgs = new Image();
-							imgs.src = "img/bd5ab362c2638f450f74a4d3f215274a.jpg";
-							imgs.onload = drawImg;//图片加载完成再执行
-							function drawImg(){
-								cxt.drawImage(imgs,0,0,can.width,can.height);
-							}
-						</script>
-						<script  src="js/jquery-1.11.3.min.js"></script>
-						<script  src="js/index.js"></script>
-
+						<script src="js/jquery-1.11.3.min.js"></script>
+						<script src="js/index.js"></script>
+						
 					</div>
 				</div>
 			</div>
 		</div>
 	</body>
+
 </html>
