@@ -40,11 +40,18 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
     var dom=$(that).children("a");
     dom.removeClass("hide");
     //为点击事件解绑，防止重复执行
-    dom.off("click");
-    dom.on("click",function(){
+    var dom1 = $(that).children("a:first");
+    dom1.off("click");
+    dom1.on("click",function(){
     	//删除当前图片
-     	dom.parent().remove();
+     	dom1.parent().remove();
      });
+
+    var dom2 = $(that).children("a:last");
+    dom2.off("click");
+    dom2.on("click",function(){
+      //添加当前图片
+    });
 }).off("mouseleave","div").on("mouseleave","div",function(){
     var that=this;
     $(that).children("a").addClass("hide");
