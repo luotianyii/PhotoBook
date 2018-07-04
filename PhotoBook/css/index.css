@@ -1,13 +1,13 @@
   .img-cont{
     width:260px;
-    height:300px;
+    height:600px;
     border:2px solid #317ef3;
     margin:10px auto;
   }
 
   .img-cont>div{
     width:100px;
-    height:110px;
+    height:135px;
     border:1px solid #777;
     float:left;
     margin:10px 0 0 20px;
