@@ -2,7 +2,7 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8;charset=utf-8">
 	<title></title>
-		<!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
+		<!--[if IE]><script type="text/javascript" src="canvas_files/excanvas.js"></script><![endif]-->
 		<style type="text/css" media="screen">
 		body 	{ font: 75% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif; }
 		canvas 	{ background-color: transparent; border: 1px solid gray; top: 0; left: 0; position: absolute;}
@@ -106,7 +106,15 @@
 
 	<img id="bg" src="img/bg.jpg" />
 	
-
+	<div id="ft">
+		<fieldset>
+			<legend>Photo</legend>
+			<span><input type="radio" name="some_name" value="" id="togglenone" /> None</span>
+			<span><input type="radio" name="some_name" value="" id="toggleborders" /> Border</span>
+			<span><input type="radio" name="some_name" value="" id="togglepolaroid" /> Polaroid</span>
+		</fieldset>
+		<span><input type="checkbox" name="some_name" value="" id="showcorners" /> 显示角落<span>
+	</div><br>
 </body>
 </html>
 

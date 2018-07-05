@@ -1,125 +1,29 @@
+<!DOCTYPE html>
 <html>
-<head>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8;charset=utf-8">
-	<title></title>
-	<!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
-	<style type="text/css" media="screen">
-		body 	{ font: 75% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif; }
-		canvas 	{ background-color: transparent; border: 1px solid gray; top: 0; left: 0; position: absolute;}
-		canvas.resize-ne { cursor: ne-resize; }
-		canvas.resize-se { cursor: se-resize; }
-		canvas.resize-sw { cursor: sw-resize; }
-		canvas.resize-nw { cursor: nw-resize; }
-		canvas.move { cursor: move; }
-		canvas.default { cursor: default; }
-		img 	{ display: block; visibility: hidden; position: absolute; top: -1000; left: -1000; }
-		input 	{ margin-left: 20px; }
-	</style>
-	<script src="js/utilitie.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/canvasEl.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/canvasIm.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript" charset="utf-8">
-        var CanvasDemo = function() {
-            var YD = YAHOO.util.Dom;
-            var YE = YAHOO.util.Event;
-            var canvas1;
-            var img = [];
-            return {
-                init: function() {
-                    canvas1 = new Canvas.Element();
-                    canvas1.init('canvid1',  { width: 700, height: 700 });
-                    img[img.length] = new Canvas.Img('img1', {});
-                    img[img.length] = new Canvas.Img('img2', {});
-                    img[img.length] = new Canvas.Img('img3', {});
-                    img[img.length] = new Canvas.Img('bg', {});
-                    img[img.length] = new Canvas.Img('img4', {});
-                    img[img.length] = new Canvas.Img('img4', {});
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" media="screen,print" href="css/innerPage.css" />
+	</head>
+	<body>
+		<div id="innerPage1">
+			<div id="can">
+							<!--排版供放置图片区域 -->        
+					<canvas id="whiteSpace1"  width="300px" height="300px" ></canvas>
+					<canvas id ="whiteSpace2" width="300px" height="300px"></canvas>
+					</div>
+					<script>
+		
+							var can = document.getElementById("whiteSpace1");
+							var cxt = can.getContext("2d");
 
-
-
-
-
-
-                    // @param array of images ToDo: individual images
-
-                    canvas1.addImage(img[0]);
-                    canvas1.addImage(img[1]);
-                    canvas1.addImage(img[2]);
-                    canvas1.setCanvasBackground(img[3]);
-                    canvas1.addImage(img[4]);
-
-
-
-
-
-
-                    this.initEvents();
-                },
-                initEvents: function() {
-                    YE.on('togglebg','click', this.toggleBg, this, true);
-                    YE.on('showcorners','click', this.showCorners, this, true);
-                    YE.on('togglenone','click', this.toggleNone, this, true);
-                    YE.on('toggleborders','click', this.toggleBorders, this, true);
-                    YE.on('togglepolaroid','click', this.togglePolaroid, this, true);
-                    YE.on('pngbutton','click', function() { this.convertTo('png') }, this, true);
-                    YE.on('jpegbutton','click', function() { this.convertTo('jpeg') }, this, true);
-                },
-                switchBg: function() {
-                    canvas1.fillBackground = (canvas1.fillBackground) ? false : true;
-                    canvas1.renderAll();
-                },
-
-                //! insert these functions to the library. No access to _aImages should be done from here
-                showCorners: function() {
-                    this.cornersvisible = (this.cornersvisible) ? false : true;
-                    for (var i = 0, l = canvas1._aImages.length; i < l; i += 1) {
-                        canvas1._aImages[i].setCornersVisibility(this.cornersvisible);
-                    }
-                    canvas1.renderAll();
-                },
-                toggleNone: function() {
-                    for (var i = 0, l = canvas1._aImages.length; i < l; i += 1) {
-                        canvas1._aImages[i].setBorderVisibility(false);
-                    }
-                    canvas1.renderAll();
-                },
-                toggleBorders: function() {
-                    for (var i = 0, l = canvas1._aImages.length; i < l; i += 1) {
-                        canvas1._aImages[i].setBorderVisibility(true);
-                    }
-                    canvas1.renderAll();
-                },
-                togglePolaroid: function() {
-                    for (var i = 0, l = canvas1._aImages.length; i < l; i += 1) {
-                        canvas1._aImages[i].setPolaroidVisibility(true);
-                    }
-                    canvas1.renderAll();
-                },
-                convertTo: function(format) {
-                    var imgData = canvas1.canvasTo(format);
-                    window.open(imgData, "_blank");
-                },
-                whatever: function(e, o) {
-                    // console.log(e);
-                    // console.log(o);
-                }
-            }
-        }();
-
-
-
-
-        YAHOO.util.Event.on(window, 'load', CanvasDemo.init, CanvasDemo, true);
-	</script>
-</head>
-<body id="canvasdemo" onLoad="">
-<canvas id="canvid1" width="700px" height="700px"></canvas>
-
-
-<img id="bg" src="img/bg.jpg" />
-
-
-</body>
+							var imgs = new Image();
+							imgs.src = "img/bd5ab362c2638f450f74a4d3f215274a.jpg";
+							imgs.onload = drawImg;//图片加载完成再执行
+							function drawImg(){
+								cxt.drawImage(imgs,0,0,can.width,can.height);
+							}
+						</script>
+		</div>
+	</body>
 </html>
-
