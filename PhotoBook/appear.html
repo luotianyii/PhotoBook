@@ -31,7 +31,7 @@
 			return {
 				init: function() {
 					canvas1 = new Canvas.Element();
-					canvas1.init('canvid1',  { width: YD.getViewportWidth() - 5, height: YD.getViewportHeight() - 5 });
+					canvas1.init('canvid1',  { width: 700, height: 700 });
 
 					// @param array of images ToDo: individual images
 
@@ -106,15 +106,7 @@
 
 	<img id="bg" src="img/bg.jpg" />
 	
-	<div id="ft">
-		<fieldset>
-			<legend>Photo</legend>
-			<span><input type="radio" name="some_name" value="" id="togglenone" /> None</span>
-			<span><input type="radio" name="some_name" value="" id="toggleborders" /> Border</span>
-			<span><input type="radio" name="some_name" value="" id="togglepolaroid" /> Polaroid</span>
-		</fieldset>
-		<span><input type="checkbox" name="some_name" value="" id="showcorners" /> 显示角落<span>
-	</div><br>
+	
 </body>
 </html>
 

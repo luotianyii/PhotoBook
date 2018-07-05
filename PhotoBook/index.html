@@ -7,6 +7,8 @@
 		<link rel="stylesheet" type="text/css" media="screen,print" href="css/total.css" />
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<link rel="stylesheet" type="text/css" href="css/form.css">
+		<link rel="stylesheet" type="text/css" href="css/page.css">
+		<script src="js/changePage.js"></script>
 		<style>
 			.picture {
 				border: 1px solid black;
@@ -110,11 +112,41 @@
 				<div id="appear">
 
 					<div id="box">
-						<iframe src="appear.html" width="800px" height="800px" scrolling="no" id="myFrame" frameborder="0"></iframe>
+						<!--<iframe src="appear.html" width="800px" height="800px" scrolling="no" id="myFrame" frameborder="0"></iframe>-->
 
 						<script src="js/jquery-1.11.3.min.js"></script>
 						<script src="js/index.js"></script>
+						
+						<div id="container">
+							<div id="title">
 
+								<ul>
+									<li id="tag1">
+										<a href="#" onclick="switchTag('tag1','content1');this.blur();" class="selectli1"><span class="selectspan1">1</span></a>
+									</li>
+									<li id="tag2">
+										<a href="#" onclick="switchTag('tag2','content2');this.blur();"><span>2</span></a>
+									</li>
+									<li id="tag3">
+										<a href="#" onclick="switchTag('tag3','content3');this.blur();"><span>3</span></a>
+									</li>
+									<li id="tag4">
+										<a href="#" onclick="switchTag('tag4','content4');this.blur();"><span>4</span></a>
+									</li>
+									<li id="tag5">
+										<a href="#" onclick="switchTag('tag5','content5');this.blur();"><span>5</span></a>
+									</li>
+								</ul>
+							</div>
+							<div id="content" class="content1">
+								<div id="content1"><iframe src="appear.html"  width="800px" height="800px" scrolling="no" id="myFramecontent1" frameborder="0" ></iframe></div>
+								<div id="content2" class="hidecontent"><iframe src="appear.html" width="800px" height="800px" scrolling="no" id="myFramecontent2" frameborder="0"></iframe></div>
+								<div id="content3" class="hidecontent"><iframe src="appear.html" width="800px" height="800px" scrolling="no" id="myFramecontent3" frameborder="0"></iframe></div>
+								<div id="content4" class="hidecontent"><iframe src="appear.html" width="800px" height="800px" scrolling="no" id="myFramecontent4" frameborder="0"></iframe></div>
+								<div id="content5" class="hidecontent"><iframe src="appear.html" width="800px" height="800px" scrolling="no" id="myFramecontent5" frameborder="0"></iframe>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

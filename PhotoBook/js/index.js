@@ -64,8 +64,12 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
         var x = "imgtest"+this.id+"and" +imgcount;
         img.src = pathArray[this.id];
         img.setAttribute("id",x);
-        document.getElementById('myFrame').contentWindow.document.body.appendChild(img);
-        document.getElementById('myFrame').contentWindow.clicke(x);
+
+        var divid = $('#content').attr('class');
+        //alert(divid);
+
+        document.getElementById('myFrame'+divid).contentWindow.document.body.appendChild(img);
+        document.getElementById('myFrame'+divid).contentWindow.clicke(x);
     });
 }).off("mouseleave","div").on("mouseleave","div",function(){
     var that=this;
