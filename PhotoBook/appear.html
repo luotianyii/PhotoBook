@@ -95,9 +95,12 @@
 		
 		YAHOO.util.Event.on(window, 'load', CanvasDemo.init, CanvasDemo, true);
 
+        var id = "1";
+        function clicke(){
+            id+=1;
+            canvas1.addImage(new Canvas.Img('imgtest'+id, {}));
+            alert("读取"+id);
 
-        function clicke(x){
-            canvas1.addImage(new Canvas.Img(x, {}));
         }
 	</script>
 </head>
@@ -105,8 +108,11 @@
 	<canvas id="canvid1"></canvas>
 
 	<img id="bg" src="img/bg.jpg" />
+
+    <img id = "imgtest" src = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530769381790&di=fc3247eacaa0d4a258d7c03280384de9&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fb7fd5266d0160924592977e8d80735fae6cd3431.jpg">
 	
 	<div id="ft">
+        <input type="button" value="添加图片" onClick="clicke()">
 		<fieldset>
 			<legend>Photo</legend>
 			<span><input type="radio" name="some_name" value="" id="togglenone" /> None</span>
