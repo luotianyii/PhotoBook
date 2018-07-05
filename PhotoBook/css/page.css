@@ -1,0 +1,138 @@
+#container {
+    left: 100px;
+    text-align: left;
+    background-color: #FFFFFF;
+    padding: 20px;
+}
+#container #title {
+    height: 28px;
+}
+#container #title li {
+    float: left;
+    list-style-type: none;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    margin-right: 1px;
+}
+#container #title ul {
+    background-color: #FFFFFF;
+    height: 28px;
+}
+#container #title a {
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    width: auto;
+}
+#container #title a span{
+    display: block;
+    padding: 0 15px 0 15px;
+}
+#container #title #tag1 a:hover {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    width: auto;
+}
+#container #title #tag1 a:hover span{
+    display: block;
+    padding: 0 15px 0 15px;
+}
+#container #title #tag2 a:hover {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    width: auto;
+}
+#container #title #tag2 a:hover span{
+    display: block;
+    padding: 0 15px 0 15px;
+}
+#container #title #tag3 a:hover {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    width: auto;
+}
+#container #title #tag3 a:hover span{
+    display: block;
+    padding: 0 15px 0 15px;
+}
+#container #title #tag4 a:hover {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    width: auto;
+}
+#container #title #tag4 a:hover span{
+    display: block;
+    padding: 0 15px 0 15px;
+}
+#container #title #tag5 a:hover {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    width: auto;
+}
+#container #title #tag5 a:hover span{
+    display: block;
+    padding: 0 15px 0 15px;
+}
+#container #title .selectli1 {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    width: auto;
+}
+#container #title a .selectspan1 {
+    display: block;
+    padding: 0 15px 0 15px;
+}
+#container #title .selectli2 {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    width: auto;
+}
+#container #title a .selectspan2 {
+    display: block;
+    padding: 0 15px 0 15px;
+}
+#container #title .selectli3 {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    width: auto;
+}
+#container #title a .selectspan3 {
+    display: block;
+    padding: 0 15px 0 15px;
+}
+#container #title .selectli4 {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    width: auto;
+}
+#container #title a .selectspan4 {
+    display: block;
+    padding: 0 15px 0 15px;
+}
+#container #title .selectli5 {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    width: auto;
+}
+#container #title a .selectspan5 {
+    display: block;
+    padding: 0 15px 0 15px;
+}
+#container #content ul {margin: 10px;}
+#container #content li {margin: 5px; }
+#container #content li img {margin: 5px;display:block;}
+#container #content {
+    padding: 10px;
+}
+.hidecontent {display:none;}

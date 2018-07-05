@@ -7,11 +7,10 @@
 		<link rel="stylesheet" type="text/css" media="screen,print" href="css/total.css" />
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<link rel="stylesheet" type="text/css" href="css/form.css">
-		<style>
-			.picture {
-				border: 1px solid black;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="css/page.css" />
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/index.js"></script>
+        <script src="js/changePage.js"></script>
 	</head>
 
 	<body>
@@ -20,85 +19,7 @@
 		<div id="outer">
 			<div id="inner">
 				<div id="controls">
-					<!--<script type="text/javascript">
-						var i = 0;
-						//显示和隐藏子菜单
-						function showAndhideSubMenu(li) {
-							var subMenu = li.getElementsByTagName("ul")[0];
-							var liLeft = li.offsetLeft;
-							var liTop = li.offsetTop;
-							if(subMenu.style.display == "block") {
-								subMenu.style.display = "none";
-							} else {
-								var child;
-								var m = 0;
-								for(var i = 0; i < li.parentElement.childElementCount; i++) {
-									child = li.parentElement.getElementsByTagName("li")[m].getElementsByTagName("ul")[0];
-									child.style.display = "none";
-									count = child.childElementCount;
-									m += count + 1;
-								}
-								subMenu.style.display = "block";
-								subMenu.style.left = 0 - liLeft + "px";
-								subMenu.style.top = 150 - liTop + "px";
-							}
-						}
-					</script>
-					<ul id="navigation">
-						<li onmousedown="showAndhideSubMenu(this)">
-							<a href="#">文字</a>
-							<ul id="ul">
-								<li>
-									<a href="#">文字1</a>
-								</li>
-								<li>
-									<a href="#">文字2</a>
-								</li>
-								<li>
-									<a href="#">文字3</a>
-								</li>
-								<li>
-									<a href="#">文字4</a>
-								</li>
-								<li>
-									<a href="#">文字5</a>
-								</li>
-							</ul>
-						</li>
-						<li onmousedown="showAndhideSubMenu(this)">
-							<a href="#">装饰</a>
-							<ul id="ul">
-								<li>
-									<a href="#">装饰1</a>
-								</li>
-								<li>
-									<a href="#">装饰2</a>
-								</li>
-								<li>
-									<a href="#">装饰3</a>
-								</li>
-								<li>
-									<a href="#">装饰4</a>
-								</li>
-								<li>
-									<a href="#">装饰5</a>
-								</li>
-							</ul>
-						</li>
 
-						<li onmousedown="showAndhideSubMenu(this)">
-							<a href="#">照片</a>
-							<ul id="ul">
-								<li>
-									<a href="#">添加照片</a>
-								</li>
-								<li>
-									<a href="#">快速排版</a>
-								</li>
-							</ul>
-
-						</li>
-					</ul>-->
 					<div id=thumbnail>
 						<form>
                             <label for="input" style=" 	font-size:12px;padding:10px 30px;background:#101213;color:#FFF;border:none;border-radius:5px;">上传文件</label>
@@ -109,13 +30,39 @@
 					</div>
 				</div>
 				<div id="appear">
-					
-					
+
 					<div id="box">
-						<iframe src="appear.html" width="800px" height="800px" scrolling="no" id = "myFrame" frameborder="0"></iframe>
-						
-						<script src="js/jquery-1.11.3.min.js"></script>
-						<script src="js/index.js"></script>
+
+						<div id="container">
+							<div id="title">
+
+								<ul>
+									<li id="tag1">
+										<a href="#" onclick="switchTag('tag1','content1');this.blur();" class="selectli1"><span class="selectspan1">1</span></a>
+									</li>
+									<li id="tag2">
+										<a href="#" onclick="switchTag('tag2','content2');this.blur();"><span>2</span></a>
+									</li>
+									<li id="tag3">
+										<a href="#" onclick="switchTag('tag3','content3');this.blur();"><span>3</span></a>
+									</li>
+									<li id="tag4">
+										<a href="#" onclick="switchTag('tag4','content4');this.blur();"><span>4</span></a>
+									</li>
+									<li id="tag5">
+										<a href="#" onclick="switchTag('tag5','content5');this.blur();"><span>5</span></a>
+									</li>
+								</ul>
+							</div>
+							<div id="content" class="content1">
+								<div id="content1"><iframe src="appear.html" width="800px" height="800px" scrolling="no" frameborder="0"></iframe></div>
+								<div id="content2" class="hidecontent"><iframe src="page1.html" width="800px" height="800px" scrolling="no" frameborder="0"></iframe></div>
+								<div id="content3" class="hidecontent"><iframe src="page1.html" width="800px" height="800px" scrolling="no" frameborder="0"></iframe></div>
+								<div id="content4" class="hidecontent"><iframe src="page1.html" width="800px" height="800px" scrolling="no" frameborder="0"></iframe></div>
+								<div id="content5" class="hidecontent"><iframe src="page1.html" width="800px" height="800px" scrolling="no" frameborder="0"></iframe>
+								</div>
+							</div>
+						</div>
 						
 					</div>
 				</div>
