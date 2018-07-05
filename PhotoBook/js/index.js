@@ -1,5 +1,6 @@
 //////定义上传方法函数
 var id="1";
+var path;
 function PreviewImage(imgFile) { 
     var pattern = /(\.*.jpg$)|(\.*.png$)|(\.*.jpeg$)|(\.*.gif$)|(\.*.bmp$)/;      
     if(!pattern.test(imgFile.value)) { 
@@ -7,7 +8,7 @@ function PreviewImage(imgFile) {
       imgFile.focus(); 
     }else{
        //定义图片路径 
-       var path;
+       //var path;
        //添加显示图片的HTML元素
        id += 1;
        $(".img-cont").append("<div><div id='"+id+"'><img src='' /></div><a class='hide delete-btn'>删除</a><a class='hide add-btn'>添加</a></div>");
@@ -27,7 +28,9 @@ function PreviewImage(imgFile) {
        //重置表单
        resetForm(imgFile); 
     } 
-}  
+}
+
+
 
 //重置表单,允许用户连续添加相同的图片
 function resetForm(imgFile){
@@ -50,7 +53,11 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
     var dom2 = $(that).children("a:last");
     dom2.off("click");
     dom2.on("click",function(){
-      //添加当前图片
+        var img = document.createElement("img");
+        img.src = path;
+        img.setAttribute("id","imgtest"+id);
+        document.getElementById('myFrame').contentWindow.document.body.appendChild(img);
+        alert("添加成功"+"imgtest" + id);
     });
 }).off("mouseleave","div").on("mouseleave","div",function(){
     var that=this;

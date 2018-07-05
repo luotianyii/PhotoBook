@@ -22,41 +22,21 @@
 	<script src="js/utilitie.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/canvasEl.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/canvasIm.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
+        var canvas1;
 		var CanvasDemo = function() {
 			var YD = YAHOO.util.Dom;
 			var YE = YAHOO.util.Event;
-			var canvas1;
-			var img = [];
 			return {
 				init: function() {
 					canvas1 = new Canvas.Element();
-					canvas1.init('canvid1',  { width: YD.getViewportWidth() - 5, height: YD.getViewportHeight() - 5 });			
-					img[img.length] = new Canvas.Img('img1', {});
-					img[img.length] = new Canvas.Img('img2', {});
-					img[img.length] = new Canvas.Img('img3', {});
-					img[img.length] = new Canvas.Img('bg', {});
-					img[img.length] = new Canvas.Img('img4', {});
-					img[img.length] = new Canvas.Img('img4', {});
-				
-					
-					
-					
-					
-					
+					canvas1.init('canvid1',  { width: YD.getViewportWidth() - 5, height: YD.getViewportHeight() - 5 });
+
 					// @param array of images ToDo: individual images
-					
-					canvas1.addImage(img[0]);
-					canvas1.addImage(img[1]);
-					canvas1.addImage(img[2]);
-					canvas1.setCanvasBackground(img[3]);
-					canvas1.addImage(img[4]);
-					
-				
-					
-					
-					
-					
+
+					canvas1.setCanvasBackground(new Canvas.Img('bg', {}));
+
 					this.initEvents();
 				},
 				initEvents: function() {
@@ -114,19 +94,25 @@
 		
 		
 		YAHOO.util.Event.on(window, 'load', CanvasDemo.init, CanvasDemo, true);
+
+        var id = "1";
+        function clicke(){
+            id+=1;
+            canvas1.addImage(new Canvas.Img('imgtest'+id, {}));
+            alert("读取"+id);
+
+        }
 	</script>
 </head>
-<body id="canvasdemo" onLoad="">	
+<body id="canvasdemo" onLoad="">
 	<canvas id="canvid1"></canvas>
-	
-	<img id="img4" src="img/4.jpg" />
-	<img id="img1" src="img/7.jpg" />
-	<img id="img2" src="img/8.jpg" />
-	<img id="img3" src="img/9.jpg" />
-	<img id="img4" src="img/5.jpg" />
+
 	<img id="bg" src="img/bg.jpg" />
+
+    <img id = "imgtest" src = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530769381790&di=fc3247eacaa0d4a258d7c03280384de9&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fb7fd5266d0160924592977e8d80735fae6cd3431.jpg">
 	
-	<div id="ft">		
+	<div id="ft">
+        <input type="button" value="添加图片" onClick="clicke()">
 		<fieldset>
 			<legend>Photo</legend>
 			<span><input type="radio" name="some_name" value="" id="togglenone" /> None</span>
