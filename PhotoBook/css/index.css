@@ -1,8 +1,11 @@
   .img-cont{
+    position: relative;
+  	top: 130px;
     width:260px;
     height:600px;
     border:2px solid #317ef3;
     margin:10px auto;
+    display: block;
   }
 
   .img-cont>div{
