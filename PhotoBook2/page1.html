@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" media="screen,print" href="css/innerPage.css" />
+	</head>
+	<body>
+		<div id="innerPage1">
+			<div id="can">
+							<!--排版供放置图片区域 -->        
+					<canvas id="whiteSpace1"  width="300px" height="300px" ></canvas>
+					<canvas id ="whiteSpace2" width="300px" height="300px"></canvas>
+					</div>
+					<script>
+		
+							var can = document.getElementById("whiteSpace1");
+							var cxt = can.getContext("2d");
+
+							var imgs = new Image();
+							imgs.src = "img/bd5ab362c2638f450f74a4d3f215274a.jpg";
+							imgs.onload = drawImg;//图片加载完成再执行
+							function drawImg(){
+								cxt.drawImage(imgs,0,0,can.width,can.height);
+							}
+						</script>
+		</div>
+	</body>
+</html>
