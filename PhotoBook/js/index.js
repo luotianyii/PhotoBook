@@ -1,6 +1,8 @@
 //////定义上传方法函数
 var id="1";
 var path;
+var pathindex = 0;
+var pathArray = new Array();
 function PreviewImage(imgFile) { 
     var pattern = /(\.*.jpg$)|(\.*.png$)|(\.*.jpeg$)|(\.*.gif$)|(\.*.bmp$)/;      
     if(!pattern.test(imgFile.value)) { 
@@ -11,13 +13,15 @@ function PreviewImage(imgFile) {
        //var path;
        //添加显示图片的HTML元素
        id += 1;
-       $(".img-cont").append("<div><div id='"+id+"'><img src='' /></div><a class='hide delete-btn'>删除</a><a class='hide add-btn'>添加</a></div>");
-       
+       pathindex+=1;
+       $(".img-cont").append("<div><div id='"+id+"'><img src='' /></div><a class='hide delete-btn'>删除</a><a id = "+"'"+pathindex+"'" + "class='hide add-btn'>添加</a></div>");
+
        //判断浏览器类型
        if(document.all){ 
        //兼容IE
         imgFile.select(); 
         path = document.selection.createRange().text;
+
         document.getElementById(id).innerHTML=""; 
         document.getElementById(id).style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='scale',src=\"" + path + "\")";//使用滤镜效果 
        }else{
@@ -26,7 +30,8 @@ function PreviewImage(imgFile) {
         document.getElementById(id).innerHTML = "<img src='"+path+"' width='100' height='80' />";
        }
        //重置表单
-       resetForm(imgFile); 
+       resetForm(imgFile);
+       pathArray[pathindex] = path;
     } 
 }
 
@@ -37,6 +42,7 @@ function resetForm(imgFile){
   $(imgFile).parent()[0].reset();
 }
 
+var imgcount = 1
 //控制"按钮"显示与隐藏
 $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
     var that=this;
@@ -54,10 +60,12 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
     dom2.off("click");
     dom2.on("click",function(){
         var img = document.createElement("img");
-        img.src = path;
-        img.setAttribute("id","imgtest"+id);
+        imgcount++;
+        var x = "imgtest"+this.id+"and" +imgcount;
+        img.src = pathArray[this.id];
+        img.setAttribute("id",x);
         document.getElementById('myFrame').contentWindow.document.body.appendChild(img);
-        alert("添加成功"+"imgtest" + id);
+        document.getElementById('myFrame').contentWindow.clicke(x);
     });
 }).off("mouseleave","div").on("mouseleave","div",function(){
     var that=this;
