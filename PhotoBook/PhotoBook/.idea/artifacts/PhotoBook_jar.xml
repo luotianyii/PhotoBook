@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="PhotoBook:jar">
-    <output-path>$PROJECT_DIR$/classes/artifacts/PhotoBook_jar</output-path>
-    <root id="archive" name="PhotoBook.jar" />
-  </artifact>
-</component>
