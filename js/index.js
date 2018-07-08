@@ -77,9 +77,37 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
 })
 
 function clear(){
-//	alert("清空开始");
+	//alert("清空开始");
 	var divid = $('#content').attr('class');
 	document.getElementById('myFrame'+divid).contentWindow.removeImg();
-//	alert("清空完成");
+	//alert("清空完成");
 }
    
+
+
+/*$(".li_3").children("img").first().dblclick(function(){
+	alert("图片被点击了");
+})*/
+
+
+var imgArray = jQuery(".li_3");
+jQuery.each(imgArray, function(){
+ 	//alert(jQuery(this).find("img").attr("src"));
+ 	var decTemp = jQuery(this).find("img");
+ 	jQuery(this).find("img").dblclick(function(){
+ 		//alert(decTemp.attr("src"));
+ 		var img = document.createElement("img");
+        imgcount++;
+        var x = "dec" + "count" + imgcount;
+        img.src = decTemp.attr("src");
+        img.setAttribute("id",x);
+        img.setAttribute("width",799/10);
+        img.setAttribute("height",832/10);
+
+        var divid = $('#content').attr('class');
+        //alert(divid);
+
+        document.getElementById('myFrame'+divid).contentWindow.document.body.appendChild(img);
+        document.getElementById('myFrame'+divid).contentWindow.clicke(x);
+ 	})
+});
