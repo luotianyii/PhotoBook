@@ -76,13 +76,12 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
     $(that).children("a").addClass("hide");
 })
 
--function clear(){
+function clear(){
 	//alert("清空开始");
 	var divid = $('#content').attr('class');
 	document.getElementById('myFrame'+divid).contentWindow.removeImg();
 	//alert("清空完成");
 }
- 
    
 
 
@@ -111,5 +110,4 @@ jQuery.each(imgArray, function(){
         document.getElementById('myFrame'+divid).contentWindow.document.body.appendChild(img);
         document.getElementById('myFrame'+divid).contentWindow.clicke(x);
  	})
-}); 
-   
+});

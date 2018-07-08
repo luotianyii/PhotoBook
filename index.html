@@ -8,12 +8,18 @@
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<link rel="stylesheet" type="text/css" href="css/form.css">
 		<link rel="stylesheet" type="text/css" href="css/page.css">
-		<link rel="stylesheet" type="text/css" href="css/book.css"> 
+		<link rel="stylesheet" type="text/css" href="css/book.css">
 		<script src="js/changePage.js"></script>
+		<style>
+			.picture {
+				border: 1px solid black;
+			}
+		</style>
 		<script type="text/javascript">
 			//显示和隐藏子菜单
 			function showAndhideSubMenu(num) {
 				var subMenu = document.getElementsByClassName("ul_2")[num];
+
 				if(subMenu.style.display == "block") {
 					document.getElementsByClassName("a_1")[num].style.color = "#000";
 					document.getElementsByClassName("a_1")[num].style.background = "#C0C0C0";
@@ -34,10 +40,17 @@
 					}
 				}
 			}
+			
+			function clearPhotoBook(){
+				clear();
+			}
 		</script>
 	</head>
 
 	<body>
+		<form>
+			<input type = 'button' onclick="clearPhotoBook()" value = '清空照片书'>
+		</form>
 		<div id="header">
 			<h3>PhotoBook</h3></div>
 		<div id="outer">
@@ -76,26 +89,26 @@
 					</ul>
 					<ul class="ul_2">
 						<li class="li_3">
-							<img class="drag_2" src="img/decoration/1.png" draggable="true" />
+							<img class="drag_2" src="img/decoration/1.png" id = "img/decoration/1.png" draggable="true" />
 						</li>
 						<li class="li_3">
-							<img class="drag_2" src="img/decoration/2.png" draggable="true" />
+							<img class="drag_2" src="img/decoration/2.png" id = "img/decoration/2.png" draggable="true" />
 						</li>
 						<li class="li_3">
-							<img class="drag_2" src="img/decoration/3.png" draggable="true" />
+							<img class="drag_2" src="img/decoration/3.png" id = "img/decoration/3.png" draggable="true" />
 						</li>
 						<li class="li_3">
-							<img class="drag_2" src="img/decoration/4.png" draggable="true" />
+							<img class="drag_2" src="img/decoration/4.png" id = "img/decoration/4.png" draggable="true" />
 						</li>
 						<li class="li_3">
-							<img class="drag_2" src="img/decoration/5.png" draggable="true" />
+							<img class="drag_2" src="img/decoration/5.png" id = "img/decoration/5.png" draggable="true" />
 						</li>
 					</ul>
 					<ul class="ul_2">
 						<li class="li_4">
 							<form>
 								<label for="input">上传文件</label>
-								<input id="input" type="file" onchange='PreviewImage(this)' style="display: none" />
+								<input id="input" type="file" onchange='PreviewImage(this)'  style="display: none" />
 							</form>
 						</li>
 						<li class="li_4">
@@ -111,7 +124,7 @@
 
 						<script src="js/jquery-1.11.3.min.js"></script>
 						<script src="js/index.js"></script>
-
+						
 						<div id="container">
 							<button id="viewbutton" onclick="openDialog()">预览</button>
 										<div class='demo-bg'></div>
@@ -142,11 +155,9 @@
 									<li id="tag5">
 										<a href="#" onclick="switchTag('tag5','content5');this.blur();"><span>5</span></a>
 									</li>
-
 								</ul>
 
 							</div>
-							
 						</div>
 					</div>
 				</div>
