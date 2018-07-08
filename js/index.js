@@ -64,6 +64,12 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
         var x = "imgtest"+this.id+"and" +imgcount;
         img.src = pathArray[this.id];
         img.setAttribute("id",x);
+        
+        
+        if(img.complete){
+        	img.width = img.width/5;
+        	img.height = img.height/5;
+        }
 
         var divid = $('#content').attr('class');
         //alert(divid);
