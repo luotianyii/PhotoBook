@@ -79,6 +79,7 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
 function clear(){
 	//alert("清空开始");
 	var divid = $('#content').attr('class');
+	alert(divid);
 	document.getElementById('myFrame'+divid).contentWindow.removeImg();
 	//alert("清空完成");
 }
