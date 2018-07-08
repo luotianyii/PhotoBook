@@ -1,0 +1,40 @@
+  .img-cont{
+    position: relative;
+  	top: 130px;
+    width:260px;
+    height:600px;
+    border:2px solid #317ef3;
+    margin:10px auto;
+    display: block;
+  }
+
+  .img-cont>div{
+    width:100px;
+    height:135px;
+    border:1px solid #777;
+    float:left;
+    margin:10px 0 0 20px;
+  }
+
+  .img-cont>div>div{
+    width:100px;
+    height:80px;
+    border:1px solid red;
+  }
+
+  .img-cont>div>a{
+    width:50px;
+    height:20px;
+    border-radius:4px;
+    line-height: 20px;
+    text-align: center;
+    color:#fff;
+    display: block;
+    background: #317ef3;
+    margin:5px 0 0 0px;
+    cursor: pointer;
+  }
+
+  .hide{
+    display: none !important;
+  }

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>PhotoBook</title>
+		<link rel="stylesheet" type="text/css" media="screen,print" href="css/total.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="css/form.css">
+		<link rel="stylesheet" type="text/css" href="css/page.css">
+		<script src="js/changePage.js"></script>
+		<style>
+			.picture {
+				border: 1px solid black;
+			}
+		</style>
+		<script type="text/javascript">
+			//显示和隐藏子菜单
+			function showAndhideSubMenu(num) {
+				var subMenu = document.getElementsByClassName("ul_2")[num];
+
+				if(subMenu.style.display == "block") {
+					document.getElementsByClassName("a_1")[num].style.color = "#000";
+					document.getElementsByClassName("a_1")[num].style.background = "#C0C0C0";
+					subMenu.style.display = "none";
+					document.getElementsByClassName("img-cont")[0].style.display = "none";
+				} else {
+					document.getElementsByClassName("img-cont")[0].style.display = "none";
+					for(var i = 0; i < document.getElementsByClassName("ul_2").length; i++) {
+						document.getElementsByClassName("a_1")[i].style.color = "#000";
+						document.getElementsByClassName("a_1")[i].style.background = "#C0C0C0";
+						document.getElementsByClassName("ul_2")[i].style.display = "none";
+					}
+					document.getElementsByClassName("a_1")[num].style.color = "#fff";
+					document.getElementsByClassName("a_1")[num].style.background = "#777777";
+					subMenu.style.display = "block";
+					if(num == 2) {
+						document.getElementsByClassName("img-cont")[0].style.display = "block";
+					}
+				}
+			}
+			
+			function clearPhotoBook(){
+				clear();
+			}
+		</script>
+	</head>
+
+	<body>
+		<form>
+			<input type = 'button' onclick="clearPhotoBook()" value = '清空照片书'>
+		</form>
+		<div id="header">
+			<h3>PhotoBook</h3></div>
+		<div id="outer">
+			<div id="inner">
+				<div id="controls">
+					<ul class="ul_1">
+						<li class="li_1" onmousedown="showAndhideSubMenu(0)">
+							<a class="a_1" href="#">文字</a>
+
+						</li>
+						<li class="li_1" onmousedown="showAndhideSubMenu(1)">
+							<a class="a_1" href="#">装饰</a>
+
+						</li>
+						<li class="li_1" onmousedown="showAndhideSubMenu(2)">
+							<a class="a_1" href="#">照片</a>
+
+						</li>
+					</ul>
+					<ul class="ul_2">
+						<li class="li_2">
+							<img class="drag_1" src="img/font/1.png" draggable="true" />
+						</li>
+						<li class="li_2">
+							<img class="drag_1" src="img/font/2.png" draggable="true" />
+						</li>
+						<li class="li_2">
+							<img class="drag_1" src="img/font/3.png" draggable="true" />
+						</li>
+						<li class="li_2">
+							<img class="drag_1" src="img/font/4.png" draggable="true" />
+						</li>
+						<li class="li_2">
+							<img class="drag_1" src="img/font/5.png" draggable="true" />
+						</li>
+					</ul>
+					<ul class="ul_2">
+						<li class="li_3">
+							<img class="drag_2" src="img/decoration/1.png" draggable="true" />
+						</li>
+						<li class="li_3">
+							<img class="drag_2" src="img/decoration/2.png" draggable="true" />
+						</li>
+						<li class="li_3">
+							<img class="drag_2" src="img/decoration/3.png" draggable="true" />
+						</li>
+						<li class="li_3">
+							<img class="drag_2" src="img/decoration/4.png" draggable="true" />
+						</li>
+						<li class="li_3">
+							<img class="drag_2" src="img/decoration/5.png" draggable="true" />
+						</li>
+					</ul>
+					<ul class="ul_2">
+						<li class="li_4">
+							<form>
+								<label for="input">上传文件</label>
+								<input id="input" type="file" onchange='PreviewImage(this)'  style="display: none" />
+							</form>
+						</li>
+						<li class="li_4">
+							<a class="a_4" href="#">快速排版</a>
+						</li>
+					</ul>
+					<div class="img-cont"></div>
+				</div>
+				<div id="appear">
+
+					<div id="box">
+						<!--<iframe src="appear.html" width="800px" height="800px" scrolling="no" id="myFrame" frameborder="0"></iframe>-->
+
+						<script src="js/jquery-1.11.3.min.js"></script>
+						<script src="js/index.js"></script>
+						
+						<div id="container">
+							<div id="title">
+
+								<ul>
+									<li id="tag1">
+										<a href="#" onclick="switchTag('tag1','content1');this.blur();" class="selectli1"><span class="selectspan1">1</span></a>
+									</li>
+									<li id="tag2">
+										<a href="#" onclick="switchTag('tag2','content2');this.blur();"><span>2</span></a>
+									</li>
+									<li id="tag3">
+										<a href="#" onclick="switchTag('tag3','content3');this.blur();"><span>3</span></a>
+									</li>
+									<li id="tag4">
+										<a href="#" onclick="switchTag('tag4','content4');this.blur();"><span>4</span></a>
+									</li>
+									<li id="tag5">
+										<a href="#" onclick="switchTag('tag5','content5');this.blur();"><span>5</span></a>
+									</li>
+								</ul>
+							</div>
+							<div id="content" class="content1">
+								<div id="content1"><iframe src="appear.html"  width="800px" height="800px" scrolling="no" id="myFramecontent1" frameborder="0" ></iframe></div>
+								<div id="content2" class="hidecontent"><iframe src="appear.html" width="800px" height="800px" scrolling="no" id="myFramecontent2" frameborder="0"></iframe></div>
+								<div id="content3" class="hidecontent"><iframe src="appear.html" width="800px" height="800px" scrolling="no" id="myFramecontent3" frameborder="0"></iframe></div>
+								<div id="content4" class="hidecontent"><iframe src="appear.html" width="800px" height="800px" scrolling="no" id="myFramecontent4" frameborder="0"></iframe></div>
+								<div id="content5" class="hidecontent"><iframe src="appear.html" width="800px" height="800px" scrolling="no" id="myFramecontent5" frameborder="0"></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
