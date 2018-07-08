@@ -5,7 +5,7 @@
     height:600px;
     border:2px solid #317ef3;
     margin:10px auto;
-    display: none;
+    display: block;
   }
 
   .img-cont>div{
@@ -33,7 +33,7 @@
     background: #317ef3;
     margin:5px 0 0 0px;
     cursor: pointer;
-    float: left;
+	float:left;
   }
 
   .hide{

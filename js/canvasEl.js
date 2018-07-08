@@ -421,18 +421,8 @@ var Canvas = window.Canvas || {};
 		}
 		this._aImages.push(oImg);
 		this.renderAll(false);
+
 	};
-	
-	//this method is remove an object from the canvas
-	Canvas.Element.prototype.removeImage = function() {
-	// this._aImages[this._aImages.length] = oImg;
-		if(YAHOO.lang.isNull(this._aImages)) {
-			this._aImages = [];
-		}
-		this._aImages.splice(0,this._aImages.length);
-		this.renderAll(false);
-	};
-	
 
 	/**
 	 * Method to render both the top canvas and the secondary container canvas.
