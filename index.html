@@ -44,6 +44,42 @@
 			function clearPhotoBook(){
 				clear();
 			}
+			
+			
+			function openDialog(){
+				//alert("yulan");
+				//window.open("yulan.html","_blank");
+				var storage = window.sessionStorage;
+				//var imgSrcArray = new Array();
+				for(var i = 1;i<=5;i++){
+			    	var imgData = document.getElementById('myFramecontent'+i).contentWindow.canvasSrc("jpeg");
+			    	//alert(imgData);
+			    	//imgSrcArray[i-1] = imgData;
+			    	storage.setItem("photoBook"+i,imgData);
+			   	}
+				
+				//alert(storage.length);
+				//var newWindow = window.open(html,"_blank");
+				//var photoBookBody = newWindow.document.getElementById("mybook");
+				/*for(var i = 0;i<5;i++){    下载图片的方法
+							
+				    var MIME_TYPE = "image/jpeg";			
+				    var imgURL = imgSrcArray[i];			
+				    var dlLink = document.createElement('a');
+				    dlLink.download = "photoBookImg"+ i;
+				    dlLink.href = imgURL;
+				    dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+				    document.body.appendChild(dlLink);
+				    dlLink.click();
+				    document.body.removeChild(dlLink);
+				}*/
+				
+			
+				window.open("yulan.html","_blank");
+				
+				
+				
+			}
 		</script>
 	</head>
 
