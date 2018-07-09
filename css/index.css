@@ -11,15 +11,15 @@
   .img-cont>div{
     width:100px;
     height:115px;
-    border:1px solid #777;
+    /*border:1px solid #777;*/
     float:left;
-    margin:10px 0 0 20px;
+    margin:10px 0 0 10px;
   }
 
   .img-cont>div>div{
     width:100px;
     height:80px;
-    border:1px solid red;
+    /*border:1px solid red;*/
   }
 
   .img-cont>div>a{
@@ -33,7 +33,7 @@
     background: #317ef3;
     margin:5px 0 0 0px;
     cursor: pointer;
-	float:left;
+	  float:left;
   }
 
   .hide{

@@ -64,7 +64,7 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
         var x = "imgtest"+this.id+"and" +imgcount;
         img.src = pathArray[this.id];
         img.setAttribute("id",x);
-        
+                
         
         if(img.complete){
         	img.width = img.width/5;
@@ -83,14 +83,13 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
 })
 
 function clear(){
-	//alert("清空开始");
+//	alert("清空开始");
 	var divid = $('#content').attr('class');
-//	alert(divid);
 	document.getElementById('myFrame'+divid).contentWindow.removeImg();
-	//alert("清空完成");
+//	alert("清空完成");
 }
    
-
+-
 
 /*$(".li_3").children("img").first().dblclick(function(){
 	alert("图片被点击了");
