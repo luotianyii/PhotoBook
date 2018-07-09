@@ -3,6 +3,7 @@ var id="1";
 var path;
 var pathindex = 0;
 var pathArray = new Array();
+
 function PreviewImage(imgFile) { 
     var pattern = /(\.*.jpg$)|(\.*.png$)|(\.*.jpeg$)|(\.*.gif$)|(\.*.bmp$)/;      
     if(!pattern.test(imgFile.value)) { 
@@ -35,6 +36,36 @@ function PreviewImage(imgFile) {
     } 
 }
 
+function Quicktypeset(){
+	var typeid = 1;
+	if(pathindex<10){
+		alert("图片少于10张，还需"+(10-pathindex)+"张");
+	}
+	for(;typeid<=10;typeid++){
+	    var img = document.createElement("img");
+        imgcount++;
+        var x = "imgtest"+typeid+"and" +imgcount;
+        img.src = pathArray[typeid];
+        img.setAttribute("id",x);
+        
+        
+        if(img.complete){
+        	img.width = img.width/5;
+        	img.height = img.height/5;
+//      	img.LEFT=1500;
+//      	img.TOP=1000;
+        	
+        }
+
+        var divid = "content"+parseInt((typeid+1)/2);
+//      var divid = $('#content').attr('class');
+//      alert(divid);
+
+        document.getElementById('myFrame'+divid).contentWindow.document.body.appendChild(img);
+        document.getElementById('myFrame'+divid).contentWindow.clicke(x);
+       
+	}	
+}
 
 
 //重置表单,允许用户连续添加相同的图片
@@ -62,6 +93,7 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
         var img = document.createElement("img");
         imgcount++;
         var x = "imgtest"+this.id+"and" +imgcount;
+//      alert(this.id+"  "+pathArray.length);
         img.src = pathArray[this.id];
         img.setAttribute("id",x);
         
@@ -69,6 +101,8 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
         if(img.complete){
         	img.width = img.width/5;
         	img.height = img.height/5;
+        	img.LEFT=100;
+        	img.TOP=1000;
         }
 
         var divid = $('#content').attr('class');
