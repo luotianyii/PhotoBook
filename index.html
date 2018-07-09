@@ -5,16 +5,12 @@
 		<meta charset="utf-8" />
 		<title>PhotoBook</title>
 		<link rel="stylesheet" type="text/css" media="screen,print" href="css/total.css" />
-		<link rel="stylesheet" type="text/css" href="css/index.css">
-		<link rel="stylesheet" type="text/css" href="css/form.css">
-		<link rel="stylesheet" type="text/css" href="css/page.css">
-		<link rel="stylesheet" type="text/css" href="css/book.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/form.css" />
+		<link rel="stylesheet" type="text/css" href="css/page.css" />
+		<link rel="stylesheet" type="text/css" href="css/book.css" />
 		<script src="js/changePage.js"></script>
-		<style>
-			.picture {
-				border: 1px solid black;
-			}
-		</style>
+
 		<script type="text/javascript">
 			//显示和隐藏子菜单
 			function showAndhideSubMenu(num) {
@@ -40,11 +36,11 @@
 					}
 				}
 			}
-			
-			function clearPhotoBook(){
+
+			function clearPhotoBook() {
 				clear();
 			}
-			
+						
 			
 			function openDialog(){
 				//alert("yulan");
@@ -84,9 +80,6 @@
 	</head>
 
 	<body>
-		<form>
-			<input type = 'button' onclick="clearPhotoBook()" value = '清空照片书'>
-		</form>
 		<div id="header">
 			<h3>PhotoBook</h3></div>
 		<div id="outer">
@@ -108,7 +101,8 @@
 					</ul>
 					<ul class="ul_2">
 						<li class="li_2">
-							<img class="drag_1" src="img/font/1.png" draggable="true" />
+							<img class="drag_1" src="img/font/1.png" />
+
 						</li>
 						<li class="li_2">
 							<img class="drag_1" src="img/font/2.png" draggable="true" />
@@ -125,33 +119,33 @@
 					</ul>
 					<ul class="ul_2">
 						<li class="li_3">
-							<img class="drag_2" src="img/decoration/1.png" id = "img/decoration/1.png" draggable="true" />
+							<img class="drag_2" src="img/decoration/1.png" id="img/decoration/1.png" draggable="true" />
 						</li>
 						<li class="li_3">
-							<img class="drag_2" src="img/decoration/2.png" id = "img/decoration/2.png" draggable="true" />
+							<img class="drag_2" src="img/decoration/2.png" id="img/decoration/2.png" draggable="true" />
 						</li>
 						<li class="li_3">
-							<img class="drag_2" src="img/decoration/3.png" id = "img/decoration/3.png" draggable="true" />
+							<img class="drag_2" src="img/decoration/3.png" id="img/decoration/3.png" draggable="true" />
 						</li>
 						<li class="li_3">
-							<img class="drag_2" src="img/decoration/4.png" id = "img/decoration/4.png" draggable="true" />
+							<img class="drag_2" src="img/decoration/4.png" id="img/decoration/4.png" draggable="true" />
 						</li>
 						<li class="li_3">
-							<img class="drag_2" src="img/decoration/5.png" id = "img/decoration/5.png" draggable="true" />
+							<img class="drag_2" src="img/decoration/5.png" id="img/decoration/5.png" draggable="true" />
 						</li>
 					</ul>
 					<ul class="ul_2">
 						<li class="li_4">
 							<form>
 								<label for="input">上传文件</label>
-								<input id="input" type="file" onchange='PreviewImage(this)'  style="display: none" />
+								<input id="input" type="file" onchange='PreviewImage(this)' style="display: none" />
 							</form>
 						</li>
 						<li class="li_4">
 							<a class="a_4" href="#">快速排版</a>
 						</li>
 					</ul>
-					<div class="img-cont"></div>
+					<div class="img-cont" style="overflow-y: scroll;"></div>
 				</div>
 				<div id="appear">
 
@@ -160,36 +154,74 @@
 
 						<script src="js/jquery-1.11.3.min.js"></script>
 						<script src="js/index.js"></script>
-						
+
 						<div id="container">
-							<button id="viewbutton" onclick="openDialog()">预览</button>
-										<div class='demo-bg'></div>
-										<div class='demo-txt'>
-											<button id="closebutton" onclick="closeDialog()" >close</button></div>
+							<div class="demo">
+
+								<button id="deletebutton" onclick="clearPhotoBook()">刪除</button>
+								<button id="viewbutton" onclick="openDialog()">预览</button>
+								<div class='demo-bg'></div>
+								<div class='demo-txt'>
+									<button id="closebutton" onclick="closeDialog()">close</button>
+									<div id="bookimg">
+										<iframe src="yulan.html" width="600px" height="400px" scrolling="no" frameborder="0"></iframe>
+
+									</div>
+								</div>
+							</div>
+							<script>
+								var demobg = document.querySelector(".demo-bg");
+								var demotxt = document.querySelector(".demo-txt");
+
+								function openDialog() {
+									demotxt.style.display = "block";
+									demobg.style.display = "block";
+									var storage = window.sessionStorage;
+									//var imgSrcArray = new Array();
+									for(var i = 1; i <= 5; i++) {
+										var imgData = document.getElementById('myFramecontent' + i).contentWindow.canvasSrc("jpeg");
+										//alert(imgData);
+										//imgSrcArray[i-1] = imgData;
+										storage.setItem("photoBook" + i, imgData);
+									}
+									window.open("yulan.html","_blank");
+								}
+
+								function closeDialog() {
+									demotxt.style.display = "none";
+									demobg.style.display = "none";
+								}
+							</script>
+
 							<div id="content" class="content1">
-								<div id="content1"><iframe src="appear.html" width="800px" height="800px" scrolling="no" id="myFramecontent1" frameborder="0"></iframe></div>
-								<div id="content2" class="hidecontent"><iframe src="appear2.html" width="800px" height="800px" scrolling="no" id="myFramecontent2" frameborder="0"></iframe></div>
-								<div id="content3" class="hidecontent"><iframe src="appear3.html" width="800px" height="800px" scrolling="no" id="myFramecontent3" frameborder="0"></iframe></div>
-								<div id="content4" class="hidecontent"><iframe src="appear4.html" width="800px" height="800px" scrolling="no" id="myFramecontent4" frameborder="0"></iframe></div>
-								<div id="content5" class="hidecontent"><iframe src="appear5.html" width="800px" height="800px" scrolling="no" id="myFramecontent5" frameborder="0"></iframe></div>
+								<div id="content1"><iframe src="appear.html" width="600px" height="400px" scrolling="no" id="myFramecontent1" frameborder="0"></iframe></div>
+								<div id="content2" class="hidecontent"><iframe src="appear2.html" width="600px" height="400px" scrolling="no" id="myFramecontent2" frameborder="0"></iframe></div>
+								<div id="content3" class="hidecontent"><iframe src="appear3.html" width="600px" height="400px" scrolling="no" id="myFramecontent3" frameborder="0"></iframe></div>
+								<div id="content4" class="hidecontent"><iframe src="appear4.html" width="600px" height="400px" scrolling="no" id="myFramecontent4" frameborder="0"></iframe></div>
+								<div id="content5" class="hidecontent"><iframe src="appear5.html" width="600px" height="400px" scrolling="no" id="myFramecontent5" frameborder="0"></iframe></div>
 							</div>
 							<div id="title">
 
 								<ul>
 									<li id="tag1">
-										<a href="#" onclick="switchTag('tag1','content1');this.blur();" class="selectli1"><span class="selectspan1">1</span></a>
+										<a href="#" onclick="switchTag('tag1','content1');this.blur();" class="selectli1"><span class="selectspan1">
+											<img src="img/bg.jpg" width="60px" height="40px"/> </span></a>
 									</li>
 									<li id="tag2">
-										<a href="#" onclick="switchTag('tag2','content2');this.blur();"><span>2</span></a>
+										<a href="#" onclick="switchTag('tag2','content2');this.blur();">
+											<span><img src="img/bg2.jpg" width="60px" height="40px"/></span></a>
 									</li>
 									<li id="tag3">
-										<a href="#" onclick="switchTag('tag3','content3');this.blur();"><span>3</span></a>
+										<a href="#" onclick="switchTag('tag3','content3');this.blur();">
+											<span><img src="img/bg3.jpg" width="60px" height="40px"/></span></a>
 									</li>
 									<li id="tag4">
-										<a href="#" onclick="switchTag('tag4','content4');this.blur();"><span>4</span></a>
+										<a href="#" onclick="switchTag('tag4','content4');this.blur();">
+											<span><img src="img/bg4.jpg" width="60px" height="40px"/></span></a>
 									</li>
 									<li id="tag5">
-										<a href="#" onclick="switchTag('tag5','content5');this.blur();"><span>5</span></a>
+										<a href="#" onclick="switchTag('tag5','content5');this.blur();">
+											<span><img src="img/bg5.jpg" width="60px" height="40px"/></span></a>
 									</li>
 								</ul>
 							</div>

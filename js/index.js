@@ -35,7 +35,32 @@ function PreviewImage(imgFile) {
     } 
 }
 
+function Quicktypeset(){
+	var typeid = 1;
+	if(pathArray.length<10){
+		alert("需要10张图片，还需"+(10-pathArray.length)+"张")
+	}
+	
+	for (;typeid<=10;typeid++){
+		var img = document.createElement("img");
+        imgcount++;
+        var x = "imgtest"+typeid+"and" +imgcount;
+        img.src = pathArray[typeid];
+        img.setAttribute("id",x);
+        
+        
+        if(img.complete){
+        	img.width = img.width/5;
+        	img.height = img.height/5;
+        }
 
+        var divid = "content"+parseInt((typeid+1)/2);
+        //alert(divid);
+
+        document.getElementById('myFrame'+divid).contentWindow.document.body.appendChild(img);
+        document.getElementById('myFrame'+divid).contentWindow.clicke(x);
+	}
+}
 
 //重置表单,允许用户连续添加相同的图片
 function resetForm(imgFile){
