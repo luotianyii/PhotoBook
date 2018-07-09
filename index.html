@@ -10,11 +10,8 @@
 		<link rel="stylesheet" type="text/css" href="css/page.css">
 		<link rel="stylesheet" type="text/css" href="css/book.css">
 		<script src="js/changePage.js"></script>
-		<style>
-			.picture {
-				border: 1px solid black;
-			}
-		</style>
+		
+		
 		<script type="text/javascript">
 			//显示和隐藏子菜单
 			function showAndhideSubMenu(num) {
@@ -40,17 +37,15 @@
 					}
 				}
 			}
-			
-			function clearPhotoBook(){
+
+			function clearPhotoBook() {
 				clear();
 			}
+			
 		</script>
 	</head>
 
 	<body>
-		<form>
-			<input type = 'button' onclick="clearPhotoBook()" value = '清空照片书'>
-		</form>
 		<div id="header">
 			<h3>PhotoBook</h3></div>
 		<div id="outer">
@@ -89,30 +84,30 @@
 					</ul>
 					<ul class="ul_2">
 						<li class="li_3">
-							<img class="drag_2" src="img/decoration/1.png" id = "img/decoration/1.png" draggable="true" />
+							<img class="drag_2" src="img/decoration/1.png" id="img/decoration/1.png" draggable="true" />
 						</li>
 						<li class="li_3">
-							<img class="drag_2" src="img/decoration/2.png" id = "img/decoration/2.png" draggable="true" />
+							<img class="drag_2" src="img/decoration/2.png" id="img/decoration/2.png" draggable="true" />
 						</li>
 						<li class="li_3">
-							<img class="drag_2" src="img/decoration/3.png" id = "img/decoration/3.png" draggable="true" />
+							<img class="drag_2" src="img/decoration/3.png" id="img/decoration/3.png" draggable="true" />
 						</li>
 						<li class="li_3">
-							<img class="drag_2" src="img/decoration/4.png" id = "img/decoration/4.png" draggable="true" />
+							<img class="drag_2" src="img/decoration/4.png" id="img/decoration/4.png" draggable="true" />
 						</li>
 						<li class="li_3">
-							<img class="drag_2" src="img/decoration/5.png" id = "img/decoration/5.png" draggable="true" />
+							<img class="drag_2" src="img/decoration/5.png" id="img/decoration/5.png" draggable="true" />
 						</li>
 					</ul>
 					<ul class="ul_2">
 						<li class="li_4">
 							<form>
 								<label for="input">上传文件</label>
-								<input id="input" type="file" onchange='PreviewImage(this)'  style="display: none" />
+								<input id="input" type="file" onchange='PreviewImage(this)' style="display: none" />
 							</form>
 						</li>
-						<li class="li_4">
-							<a class="a_4" href="#">快速排版</a>
+						<li class="li_4" onmousedown=Quicktypeset()>
+							<a class="a_4" href="#" >快速排版</a>
 						</li>
 					</ul>
 					<div class="img-cont"></div>
@@ -124,18 +119,42 @@
 
 						<script src="js/jquery-1.11.3.min.js"></script>
 						<script src="js/index.js"></script>
-						
+
 						<div id="container">
-							<button id="viewbutton" onclick="openDialog()">预览</button>
-										<div class='demo-bg'></div>
-										<div class='demo-txt'>
-											<button id="closebutton" onclick="closeDialog()" >close</button></div>
+							<div class="demo">
+								<button id="viewbutton" onclick="openDialog()">预览</button>
+								<button id="deletebutton" onclick="clearPhotoBook()">刪除</button>
+								<div class='demo-bg'></div>
+								<div class='demo-txt'>
+									<button id="closebutton" onclick="closeDialog()">close</button>
+									<div id="bookimg">
+										<iframe src="appear.html" width="600px" height="400px" scrolling="no" frameborder="0"></iframe>
+
+										<button id="pageup">上一页</button>
+										<button id="pagedown">下一页</button></div>
+								</div>
+							</div>
+							<script>
+								var demobg = document.querySelector(".demo-bg");
+								var demotxt = document.querySelector(".demo-txt");
+
+								function openDialog() {
+									demotxt.style.display = "block";
+									demobg.style.display = "block";
+								}
+
+								function closeDialog() {
+									demotxt.style.display = "none";
+									demobg.style.display = "none";
+								}
+							</script>
+
 							<div id="content" class="content1">
-								<div id="content1"><iframe src="appear.html" width="800px" height="800px" scrolling="no" id="myFramecontent1" frameborder="0"></iframe></div>
-								<div id="content2" class="hidecontent"><iframe src="appear2.html" width="800px" height="800px" scrolling="no" id="myFramecontent2" frameborder="0"></iframe></div>
-								<div id="content3" class="hidecontent"><iframe src="appear3.html" width="800px" height="800px" scrolling="no" id="myFramecontent3" frameborder="0"></iframe></div>
-								<div id="content4" class="hidecontent"><iframe src="appear4.html" width="800px" height="800px" scrolling="no" id="myFramecontent4" frameborder="0"></iframe></div>
-								<div id="content5" class="hidecontent"><iframe src="appear5.html" width="800px" height="800px" scrolling="no" id="myFramecontent5" frameborder="0"></iframe></div>
+								<div id="content1"><iframe src="appear.html" width="600px" height="400px" scrolling="no" id="myFramecontent1" frameborder="0"></iframe></div>
+								<div id="content2" class="hidecontent"><iframe src="appear2.html" width="600px" height="400px" scrolling="no" id="myFramecontent2" frameborder="0"></iframe></div>
+								<div id="content3" class="hidecontent"><iframe src="appear3.html" width="600px" height="400px" scrolling="no" id="myFramecontent3" frameborder="0"></iframe></div>
+								<div id="content4" class="hidecontent"><iframe src="appear4.html" width="600px" height="400px" scrolling="no" id="myFramecontent4" frameborder="0"></iframe></div>
+								<div id="content5" class="hidecontent"><iframe src="appear5.html" width="600px" height="400px" scrolling="no" id="myFramecontent5" frameborder="0"></iframe></div>
 							</div>
 							<div id="title">
 
