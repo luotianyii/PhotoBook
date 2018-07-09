@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<link rel="stylesheet" href="booklet/jquery.booklet.latest.css" media="screen,projection,tv">
+		
+		<!-- jQuery -->
+　　		<script type="text/javascript" src="booklet/jquery-2.1.0.min.js"></script>
+    	<!-- jQuery UI (optional) -->
+    	<script type="text/javascript" src="booklet/jquery-ui-1.10.4.min.js"></script>
+    	<!-- Booklet -->
+    	<script type="text/javascript" src="booklet/jquery.easing.1.3.js"></script>
+    	<script type="text/javascript" src="booklet/jquery.booklet.latest.min.js"></script> 
+		<script type="text/javascript">
+        
+        
+        window.onload = function(){
+        	for(var i = 1;i<=5;i++){
+        		var imgSrc = sessionStorage["photoBook"+i];
+        		var temp = this.document.getElementById("mybook");
+        		//temp.append("<div><img src = "  + "'" + imgSrc + "'"+ "/></div>");
+        		var img = document.createElement("img");
+        		img.src = imgSrc;
+        		temp.appendChild(img);
+        	}
+        	$(function(){
+	            //single book
+	            $('#mybook').booklet({
+	            	width:'100%',
+	            	height:600
+	            });
+	            //multiple books with ID's
+	            $('#mybook1, #mybook2').booklet();
+	            //multiple books with a class
+	            $('.mycustombooks').booklet();
+        	});
+        }
+    </script>
+	</head>
+	<body>		
+		<div id="mybook">
+	        <!--<div>
+	        <h3>Yay, Page 1!</h3>
+	            <img src = "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=534858419,2528258774&fm=200&gp=0.jpg">
+	        </div>
+	        <div>
+	            <h3>Yay, Page 2!</h3>
+	             <img src = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531049838312&di=05131a23b402b81f837d435d0b7b15f2&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Fb21c8701a18b87d6232299000d0828381f30fd48.jpg">
+	        </div>
+	        <div>
+	            <h3>Yay, Page 3!</h3>
+	            
+	        </div>
+	        <div>
+	            <h3>Yay, Page 4!</h3>
+	        </div>
+	        <div>
+	            <h3>Yay, Page 5!</h3>
+	        </div>
+	        <div>
+	            <h3>Yay, Page 6!</h3>
+	        </div>-->
+    	</div>
+	</body>
+</html>
