@@ -12,6 +12,11 @@
 		<script src="js/changePage.js"></script>
 
 		<script type="text/javascript">
+			/**
+			 * this method is to control the visiblity of each menu
+			 * @method showAndhideSubMenu
+			 * @param num{int} the number of subMenu
+			 * */
 			//显示和隐藏子菜单
 			function showAndhideSubMenu(num) {
 				var subMenu = document.getElementsByClassName("ul_2")[num];
@@ -36,12 +41,19 @@
 					}
 				}
 			}
-
+			
+			/**
+			 * this method is to use the method clear() to clear the photobook
+			 * @method clearPhotoBook
+			 * */
 			function clearPhotoBook() {
 				clear();
 			}
 						
-			
+			/** 
+			 * this method is to open the yulan dialog
+			 * @method openDialog
+			 * */
 			function openDialog(){
 				//alert("yulan");
 				//window.open("yulan.html","_blank");
@@ -71,10 +83,7 @@
 				}*/
 				
 			
-				window.open("yulan.html","_blank");
-				
-				
-				
+				window.open("yulan.html","_blank");	
 			}
 		</script>
 	</head>

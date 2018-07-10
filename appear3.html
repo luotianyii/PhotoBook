@@ -95,14 +95,15 @@
 		
 		YAHOO.util.Event.on(window, 'load', CanvasDemo.init, CanvasDemo, true);
 
-
+		/*
+		 * these method is the same as the method in appear.html
+		 * */
         function clicke(x){
             canvas1.addImage(new Canvas.Img(x, {}));
         }
         function removeImg(){
         	canvas1.removeImage();
         } 
-        
         function canvasSrc(format){
         	return canvas1.canvasTo(format);
         }

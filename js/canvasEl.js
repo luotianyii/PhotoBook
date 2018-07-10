@@ -423,6 +423,12 @@ var Canvas = window.Canvas || {};
 		this.renderAll(false);
 
 	};
+	
+	/**
+	 * Method to remove all image in the canvas.
+ 	 * It actually only removes the images in an array that already in the canvas.
+	 * @method removeImage
+	 */	
 	Canvas.Element.prototype.removeImage = function() {
 	// this._aImages[this._aImages.length] = oImg;
 		if(YAHOO.lang.isNull(this._aImages)) {

@@ -3,6 +3,12 @@ var id="1";
 var path;
 var pathindex = 0;
 var pathArray = new Array();
+
+/**
+ * this method is use to add image to the div of index.html
+ * @method PreviewImage
+ * @param imgFile{String} the src of img which need to be added into the canvas
+ */
 function PreviewImage(imgFile) { 
     var pattern = /(\.*.jpg$)|(\.*.png$)|(\.*.jpeg$)|(\.*.gif$)|(\.*.bmp$)/;      
     if(!pattern.test(imgFile.value)) { 
@@ -35,6 +41,12 @@ function PreviewImage(imgFile) {
     } 
 }
 
+
+
+/**
+ * this function is used to do Fast sorting of image
+ * @method Quicktypeset
+ */
 function Quicktypeset(){
 	var typeid = 1;
 	if(pathArray.length<6){
@@ -64,13 +76,22 @@ function Quicktypeset(){
 //      img.prototype.TOP = 800;
 	}
 }
-
+/**
+ * this function is to reset the form of images to add the same iamge
+ * @method resetForm
+ * @param imgFile{String} this is the src path of image
+ * */
 //重置表单,允许用户连续添加相同的图片
 function resetForm(imgFile){
   $(imgFile).parent()[0].reset();
 }
 
 var imgcount = 1
+
+/**
+ * this method is used to control the visiblity of some button
+ * and function of add and remove 
+ * */
 //控制"按钮"显示与隐藏
 $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
     var that=this;
@@ -111,11 +132,14 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
     var that=this;
     $(that).children("a").addClass("hide");
 })
-
+/**
+ * this method is used to clear the photobook
+ * @method clear
+ * */
 function clear(){
 	//alert("清空开始");
 	var divid = $('#content').attr('class');
-//	alert(divid);
+	//alert(divid);
 	document.getElementById('myFrame'+divid).contentWindow.removeImg();
 	//alert("清空完成");
 }
@@ -125,8 +149,10 @@ function clear(){
 /*$(".li_3").children("img").first().dblclick(function(){
 	alert("图片被点击了");
 })*/
-
-
+/**
+ * this method is used to add the decoration to the photobook
+ * */
+//用jquery遍历每个元素然后添加对应的点击方法
 var imgArray = jQuery(".li_3");
 jQuery.each(imgArray, function(){
  	//alert(jQuery(this).find("img").attr("src"));

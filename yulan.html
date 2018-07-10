@@ -15,7 +15,10 @@
     	<script type="text/javascript" src="booklet/jquery.booklet.latest.min.js"></script> 
 		<script type="text/javascript">
         
-        
+        /**
+         * this method is use to onload images before this window is onload
+         * use sessionStorage to keep and read the information of each image
+         * */
         window.onload = function(){
         	for(var i = 1;i<=5;i++){
         		var imgSrc = sessionStorage["photoBook"+i];
