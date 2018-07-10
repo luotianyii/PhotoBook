@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title>PhotoBook</title>
+		<title>PhotoBook|主页</title>
 		<link rel="stylesheet" type="text/css" media="screen,print" href="css/total.css" />
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 		<link rel="stylesheet" type="text/css" href="css/form.css" />
@@ -12,11 +12,6 @@
 		<script src="js/changePage.js"></script>
 
 		<script type="text/javascript">
-			/**
-			 * this method is to control the visiblity of each menu
-			 * @method showAndhideSubMenu
-			 * @param num{int} the number of subMenu
-			 * */
 			//显示和隐藏子菜单
 			function showAndhideSubMenu(num) {
 				var subMenu = document.getElementsByClassName("ul_2")[num];
@@ -41,56 +36,16 @@
 					}
 				}
 			}
-			
-			/**
-			 * this method is to use the method clear() to clear the photobook
-			 * @method clearPhotoBook
-			 * */
+
 			function clearPhotoBook() {
 				clear();
-			}
-						
-			/** 
-			 * this method is to open the yulan dialog
-			 * @method openDialog
-			 * */
-			function openDialog(){
-				//alert("yulan");
-				//window.open("yulan.html","_blank");
-				var storage = window.sessionStorage;
-				//var imgSrcArray = new Array();
-				for(var i = 1;i<=5;i++){
-			    	var imgData = document.getElementById('myFramecontent'+i).contentWindow.canvasSrc("jpeg");
-			    	//alert(imgData);
-			    	//imgSrcArray[i-1] = imgData;
-			    	storage.setItem("photoBook"+i,imgData);
-			   	}
-				
-				//alert(storage.length);
-				//var newWindow = window.open(html,"_blank");
-				//var photoBookBody = newWindow.document.getElementById("mybook");
-				/*for(var i = 0;i<5;i++){    下载图片的方法
-							
-				    var MIME_TYPE = "image/jpeg";			
-				    var imgURL = imgSrcArray[i];			
-				    var dlLink = document.createElement('a');
-				    dlLink.download = "photoBookImg"+ i;
-				    dlLink.href = imgURL;
-				    dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
-				    document.body.appendChild(dlLink);
-				    dlLink.click();
-				    document.body.removeChild(dlLink);
-				}*/
-				
-			
-				window.open("yulan.html","_blank");	
 			}
 		</script>
 	</head>
 
 	<body>
 		<div id="header">
-			<h3>PhotoBook</h3></div>
+			<img src="img/16.png" width="300px" height="80px"/></div>
 		<div id="outer">
 			<div id="inner">
 				<div id="controls">
@@ -151,43 +106,42 @@
 							</form>
 						</li>
 						<li class="li_4">
-							<a class="a_4" href="#" onmousedown='Quicktypeset()'>快速排版</a>
+							<a class="a_4" href="#">快速排版</a>
 						</li>
 					</ul>
 					<div class="img-cont" style="overflow-y: scroll;"></div>
 				</div>
+				
+				
+				<!--
+                	作者：陈毅
+                	时间：2018-07-10
+                	描述：右侧照片显示区，包括：删除按钮，预览按钮，照片书编辑区，背景图片分页
+                -->
 				<div id="appear">
 
 					<div id="box">
-						<!--<iframe src="appear.html" width="800px" height="800px" scrolling="no" id="myFrame" frameborder="0"></iframe>-->
-
 						<script src="js/jquery-1.11.3.min.js"></script>
 						<script src="js/index.js"></script>
 
 						<div id="container">
 							<div class="demo">
-
+								<!--
+                                	作者：陈毅
+                                	时间：2018-07-10
+                                	描述：删除按钮，删除本页中的所有添加图片；预览按钮，点击跳转到预览界面
+                                -->
 								<button id="deletebutton" onclick="clearPhotoBook()">刪除</button>
 								<button id="viewbutton" onclick="openDialog()">预览</button>
-								<div class='demo-bg'></div>
-								<div class='demo-txt'>
-									<button id="closebutton" onclick="closeDialog()">close</button>
-									<div id="bookimg">
-										<iframe src="yulan.html" width="600px" height="400px" scrolling="no" frameborder="0"></iframe>
-
-									</div>
-								</div>
+								
 							</div>
 							<script>
-								var demobg = document.querySelector(".demo-bg");
-								var demotxt = document.querySelector(".demo-txt");
-
+								
 								function openDialog() {
-									demotxt.style.display = "block";
-									demobg.style.display = "block";
+								
 									var storage = window.sessionStorage;
 									//var imgSrcArray = new Array();
-									for(var i = 1; i <= 5; i++) {
+									for(var i = 1; i <= 6; i++) {
 										var imgData = document.getElementById('myFramecontent' + i).contentWindow.canvasSrc("jpeg");
 										//alert(imgData);
 										//imgSrcArray[i-1] = imgData;
@@ -195,42 +149,51 @@
 									}
 									window.open("yulan.html","_blank");
 								}
-
-								function closeDialog() {
-									demotxt.style.display = "none";
-									demobg.style.display = "none";
-								}
 							</script>
-
+							<!--
+                            	作者：陈毅
+                            	时间：2018-07-10
+                            	描述：照片书编辑区
+                            -->
 							<div id="content" class="content1">
 								<div id="content1"><iframe src="appear.html" width="600px" height="400px" scrolling="no" id="myFramecontent1" frameborder="0"></iframe></div>
 								<div id="content2" class="hidecontent"><iframe src="appear2.html" width="600px" height="400px" scrolling="no" id="myFramecontent2" frameborder="0"></iframe></div>
 								<div id="content3" class="hidecontent"><iframe src="appear3.html" width="600px" height="400px" scrolling="no" id="myFramecontent3" frameborder="0"></iframe></div>
 								<div id="content4" class="hidecontent"><iframe src="appear4.html" width="600px" height="400px" scrolling="no" id="myFramecontent4" frameborder="0"></iframe></div>
 								<div id="content5" class="hidecontent"><iframe src="appear5.html" width="600px" height="400px" scrolling="no" id="myFramecontent5" frameborder="0"></iframe></div>
+								<div id="content6" class="hidecontent"><iframe src="appear6.html" width="600px" height="400px" scrolling="no" id="myFramecontent6" frameborder="0"></iframe></div>
 							</div>
+							
 							<div id="title">
-
+								<!--
+                            	作者：陈毅
+                            	时间：2018-07-10
+                            	描述：照片书分页，点击图片后图片编辑区显示相应页面
+                            -->
 								<ul>
 									<li id="tag1">
 										<a href="#" onclick="switchTag('tag1','content1');this.blur();" class="selectli1"><span class="selectspan1">
-											<img src="img/bg.jpg" width="60px" height="40px"/> </span></a>
+											<img src="img/bg.png" width="60px" height="40px"/> </span></a>
 									</li>
 									<li id="tag2">
 										<a href="#" onclick="switchTag('tag2','content2');this.blur();">
-											<span><img src="img/bg2.jpg" width="60px" height="40px"/></span></a>
+											<span><img src="img/bg2.png" width="60px" height="40px"/></span></a>
 									</li>
 									<li id="tag3">
 										<a href="#" onclick="switchTag('tag3','content3');this.blur();">
-											<span><img src="img/bg3.jpg" width="60px" height="40px"/></span></a>
+											<span><img src="img/bg3.png" width="60px" height="40px"/></span></a>
 									</li>
 									<li id="tag4">
 										<a href="#" onclick="switchTag('tag4','content4');this.blur();">
-											<span><img src="img/bg4.jpg" width="60px" height="40px"/></span></a>
+											<span><img src="img/bg4.png" width="60px" height="40px"/></span></a>
 									</li>
 									<li id="tag5">
 										<a href="#" onclick="switchTag('tag5','content5');this.blur();">
-											<span><img src="img/bg5.jpg" width="60px" height="40px"/></span></a>
+											<span><img src="img/bg5.png" width="60px" height="40px"/></span></a>
+									</li>
+									<li id="tag6">
+										<a href="#" onclick="switchTag('tag6','content6');this.blur();">
+											<span><img src="img/bg6.png" width="60px" height="40px"/></span></a>
 									</li>
 								</ul>
 							</div>

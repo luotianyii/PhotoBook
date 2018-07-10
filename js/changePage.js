@@ -1,7 +1,8 @@
+/*作者：陈毅
+ * 描述：分页函数，点击图片后获取图片tag跳转显示相应content
+ */
 function switchTag(tag, content) {
-	//	alert(tag);
-	//	alert(content);
-	for(var i = 1; i < 6; i++) {
+	for(var i = 1; i < 7; i++) {
 		if("tag" + i == tag) {
 			document.getElementById(tag).getElementsByTagName("a")[0].className = "selectli" + i;
 			document.getElementById(tag).getElementsByTagName("a")[0].getElementsByTagName("span")[0].className = "selectspan" + i;
@@ -16,17 +17,4 @@ function switchTag(tag, content) {
 		}
 		document.getElementById("content").className = content;
 	}
-}
-
-var demobg = document.querySelector(".demo-bg");
-var demotxt = document.querySelector(".demo-txt");
-
-function openDialog() {
-	demotxt.style.display = "block";
-	demobg.style.display = "block";
-}
-
-function closeDialog() {
-	demotxt.style.display = "none";
-	demobg.style.display = "none";
 }

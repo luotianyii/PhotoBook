@@ -1,39 +1,15 @@
+/*作者：陈毅
+ * 描述：主页的右边展示区删除和预览按钮的样式
+ */
+
 .demo{
     width: 400px;
-    height: 100px;
+    height: 50px;
     position: relative;
     top:0px;
     flex-direction: column;
 }
-.demo-bg{
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 0;
-    width: 750px;
-    height: 600px;
-    /*filter:Alpha(opacity=50);*/
-    background-color: rgba(0,0,0,0.4); /*实现透明背景*/
-    display: none;
-}
-.demo-txt{
-    position: relative;
-    z-index: 1;
-    color: #000;
-    background: white;
-    width: 700px;
-    height: 500px;
-    margin:auto;
-    padding: auto;
-    left: 10px;
-    bottom: 0;
-    top: 10px;
-    display: none;
-    padding: 10px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-}
+
 #deletebutton{
 	width: 70px;
     height: 20px;
@@ -60,22 +36,4 @@
     box-shadow:  2px 2px 10px red;
     -webkit-box-shadow:  2px 2px 10px red;
     -moz-box-shadow:  2px 2px 10px red;
-}
-#closebutton{
-    float: right;
-    width: 70px;
-    height: 20px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    background: yellow;
-    margin: 20px 0 0 40px;
-    border: 0;
-    box-shadow:  2px 2px 10px red;
-    -webkit-box-shadow:  2px 2px 10px red;
-    -moz-box-shadow:  2px 2px 10px red;
-}
-#bookimg{
-	width:600px ;
-	height: 400px;
 }

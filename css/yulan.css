@@ -1,0 +1,35 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 98%;
+	min-width: 1100px;
+	height: 800px;
+	background-color: ;
+	background-image: url(../img/12.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.a1 {
+	position: absolute;
+	left: 47%;
+	/*左右位置*/
+	top: 50px;
+	/*上下位置*/
+	width: 160px;
+	height: 60px;
+	/*设置div的大小*/
+	border: 1px solid black;
+	/*边框*/
+	text-align: center;
+	/*文字水平居中对齐*/
+	line-height: 60px;
+	/*设置文字行距等于div的高度*/
+	overflow: hidden;
+	background-color: lightgray;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#mybook{
+	top: 100px;
+}
