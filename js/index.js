@@ -81,6 +81,8 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
     dom1.off("click");
     dom1.on("click",function(){
     	//删除当前图片
+    	pathindex--;
+    	pathArray.splice($(that).children("div").attr("id").length-1,1);
      	dom1.parent().remove();
      });
 
