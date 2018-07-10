@@ -37,8 +37,9 @@ function PreviewImage(imgFile) {
 
 function Quicktypeset(){
 	var typeid = 1;
-	if(pathArray.length<10){
-		alert("需要10张图片，还需"+(10-pathArray.length)+"张")
+	if(pathArray.length<6){
+		alert("至少需要10张图片");
+		return false;
 	}
 	
 	for (;typeid<=10;typeid++){
@@ -50,8 +51,8 @@ function Quicktypeset(){
         
         
         if(img.complete){
-        	img.width = img.width/5;
-        	img.height = img.height/5;
+        	img.width = img.width/6;
+        	img.height = img.height/6;
         }
 
         var divid = "content"+parseInt((typeid+1)/2);
@@ -59,6 +60,8 @@ function Quicktypeset(){
 
         document.getElementById('myFrame'+divid).contentWindow.document.body.appendChild(img);
         document.getElementById('myFrame'+divid).contentWindow.clicke(x);
+//      img.prototype.left = 800;
+//      img.prototype.TOP = 800;
 	}
 }
 
@@ -92,8 +95,8 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
         
         
         if(img.complete){
-        	img.width = img.width/5;
-        	img.height = img.height/5;
+        	img.width = img.width/6;
+        	img.height = img.height/6;
         }
 
         var divid = $('#content').attr('class');
@@ -110,7 +113,7 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
 function clear(){
 	//alert("清空开始");
 	var divid = $('#content').attr('class');
-	alert(divid);
+//	alert(divid);
 	document.getElementById('myFrame'+divid).contentWindow.removeImg();
 	//alert("清空完成");
 }
