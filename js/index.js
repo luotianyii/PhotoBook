@@ -90,7 +90,7 @@ var imgcount = 1
 
 /**
  * this method is used to control the visiblity of some button
- * and function of add and remove 
+ * and function of add and remove image to the canvas
  * */
 //控制"按钮"显示与隐藏
 $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
@@ -174,3 +174,24 @@ jQuery.each(imgArray, function(){
         document.getElementById('myFrame'+divid).contentWindow.clicke(x);
  	})
 });
+
+
+
+function wordImageAdd(src){
+        var img = document.createElement("img");
+        imgcount++;
+        var x = "wordtest"+ "and" +imgcount;
+        img.src = src;
+        img.setAttribute("id",x);
+        
+        if(img.complete){
+        	/*img.setAttribute("width",450);
+        	img.setAttribute("height",60);*/
+        }
+
+        var divid = $('#content').attr('class');
+        //alert(divid);
+
+        document.getElementById('myFrame'+divid).contentWindow.document.body.appendChild(img);
+        document.getElementById('myFrame'+divid).contentWindow.clicke(x);
+}

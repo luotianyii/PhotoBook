@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="css/page.css" />
 		<link rel="stylesheet" type="text/css" href="css/book.css" />
 		<script src="js/changePage.js"></script>
+		<script src="js/wordinput.js"></script>
 
 		<script type="text/javascript">
 			/**
@@ -41,7 +42,7 @@
 					}
 				}
 			}
-			
+
 			/**
 			 * this method is to use the method clear() to clear the photobook
 			 * @method clearPhotoBook
@@ -72,9 +73,43 @@
 				    document.body.appendChild(dlLink);
 				    dlLink.click();
 				    document.body.removeChild(dlLink);
+				   }
+			}
+			/** 
+			 * this method is to open the yulan dialog
+			 * @method openDialog
+			 * */
+				//alert(storage.length);
+				//var newWindow = window.open(html,"_blank");
+				//var photoBookBody = newWindow.document.getElementById("mybook");
+				/*for(var i = 0;i<5;i++){    下载图片的方法
+							
+				    var MIME_TYPE = "image/jpeg";			
+				    var imgURL = imgSrcArray[i];			
+				    var dlLink = document.createElement('a');
+				    dlLink.download = "photoBookImg"+ i;
+				    dlLink.href = imgURL;
+				    dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+				    document.body.appendChild(dlLink);
+				    dlLink.click();
+				    document.body.removeChild(dlLink);
+				}*/
+
+
+			function wordADD(src) {
+				wordImageAdd(src);
+			}
+
+			function clicked(fontfa) {
+				var word = prompt("请输入文字", "Harry Potter");
+				if(word != null && word != "") {
+					var wordImageSrc = makeImage(word, word.length * 20, fontfa);
+					var imgtest = document.createElement("img");
+					imgtest.src = wordImageSrc;
+					document.body.appendChild(imgtest);
+					wordADD(wordImageSrc);
 				}
-			}			
-			
+			}
 		</script>
 	</head>
 
@@ -100,20 +135,19 @@
 					</ul>
 					<ul class="ul_2">
 						<li class="li_2">
-							<img class="drag_1" src="img/font/1.png" />
-
+							<img class="drag_1" src="img/font/1.png" onclick="clicked('Microsoft YaHei')" draggable="true" />
 						</li>
 						<li class="li_2">
-							<img class="drag_1" src="img/font/2.png" onclick="wordClicked()" draggable="true" />
+							<img class="drag_1" src="img/font/2.png" onclick="clicked('YouYuan')" draggable="true" />
 						</li>
 						<li class="li_2">
-							<img class="drag_1" src="img/font/3.png" draggable="true" />
+							<img class="drag_1" src="img/font/3.png" onclick="clicked('SimHei')" draggable="true" />
 						</li>
 						<li class="li_2">
-							<img class="drag_1" src="img/font/4.png" draggable="true" />
+							<img class="drag_1" src="img/font/4.png" onclick="clicked('STXingkai')" draggable="true" />
 						</li>
 						<li class="li_2">
-							<img class="drag_1" src="img/font/5.png" draggable="true" />
+							<img class="drag_1" src="img/font/5.png" onclick="clicked('STLiti')" draggable="true" />
 						</li>
 					</ul>
 					<ul class="ul_2">
@@ -160,12 +194,14 @@
 								<button id="deletebutton" onclick="clearPhotoBook()">刪除</button>
 								<button id="viewbutton" onclick="openDialog()">预览</button>
 								<button id="downbutton" onclick="download()">导出</button>
+
 							</div>
 							<script>
-								/**
+							    /**
 			 					* this method is to open the yulan dialog
 			 					* @method openDialog
 			 					* */
+
 								function openDialog() {
 									var storage = window.sessionStorage;
 									//var imgSrcArray = new Array();
@@ -175,8 +211,9 @@
 										//imgSrcArray[i-1] = imgData;
 										storage.setItem("photoBook" + i, imgData);
 									}
-									window.open("yulan.html","_blank");
+									window.open("yulan.html", "_blank");
 								}
+
 							</script>
 
 							<div id="content" class="content1">
@@ -209,7 +246,7 @@
 									<li id="tag5">
 										<a href="#" onclick="switchTag('tag5','content5');this.blur();">
 											<span><img src="img/bg5.png" width="60px" height="60px"/></span></a>
-									</li>
+									</li>																		</li>
 									<li id="tag6">
 										<a href="#" onclick="switchTag('tag6','content6');this.blur();">
 											<span><img src="img/bg6.png" width="60px" height="60px"/></span></a>
@@ -222,4 +259,5 @@
 			</div>
 		</div>
 	</body>
+
 </html>
