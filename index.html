@@ -100,56 +100,6 @@
 				    document.body.removeChild(dlLink);
 				}
 			}			
-			/** 
-			 * this method is to open the yulan dialog
-			 * @method openDialog
-			 * */
-			function openDialog(){
-				//alert("yulan");
-				//window.open("yulan.html","_blank");
-				var storage = window.sessionStorage;
-				//
-				for(var i = 1;i<=5;i++){
-			    	var imgData = document.getElementById('myFramecontent'+i).contentWindow.canvasSrc("jpeg");
-			    	//alert(imgData);
-			    	//imgSrcArray[i-1] = imgData;
-			    	storage.setItem("photoBook"+i,imgData);
-			   	}
-				
-				//alert(storage.length);
-				//var newWindow = window.open(html,"_blank");
-				//var photoBookBody = newWindow.document.getElementById("mybook");
-				
-				
-			
-				window.open("yulan.html","_blank");	
-			}
-			
-			
-			
-			
-			function wordClicked(){
-				var wordWindow = window.open ('wordinput.html', 'newwindow', 'height=300, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no');		
-			}
-			
-			function wordADD(src){
-				wordImageAdd(src);
-			}
-			
-			function download(){
-				for(var i = 0;i<5;i++){    //下载图片的方法
-					var imgData = document.getElementById('myFramecontent'+(i+1)).contentWindow.canvasSrc("png");		
-				    var MIME_TYPE = "image/png";			
-				    var imgURL = imgData;			
-				    var dlLink = document.createElement('a');
-				    dlLink.download = "photoBookImg"+ i;
-				    dlLink.href = imgURL;
-				    dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
-				    document.body.appendChild(dlLink);
-				    dlLink.click();
-				    document.body.removeChild(dlLink);
-				}
-			}
 		</script>
 	</head>
 
