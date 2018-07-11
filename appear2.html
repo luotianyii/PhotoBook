@@ -94,10 +94,10 @@
 		
 		
 		YAHOO.util.Event.on(window, 'load', CanvasDemo.init, CanvasDemo, true);
-
-		/*
+         /*
 		 * these method is the same as the method in appear.html
 		 * */
+
         function clicke(x){
             canvas1.addImage(new Canvas.Img(x, {}));
         }
@@ -107,13 +107,12 @@
         function canvasSrc(format){
         	return canvas1.canvasTo(format);
         }
-        
 	</script>
 </head>
 <body id="canvasdemo" onLoad="">
 	<canvas id="canvid1"></canvas>
 
-	<img id="bg" src="img/bg2.jpg" />
+	<img id="bg" src="img/bg2.png" width="600px" height="400px"/>
 	
 	
 </body>

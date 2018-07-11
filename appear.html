@@ -94,23 +94,26 @@
 		
 		
 		YAHOO.util.Event.on(window, 'load', CanvasDemo.init, CanvasDemo, true);
-
 		/**
 		 * this method is to add the image to the canvas
 		 * @method clicke
 		 * @param x{string} the x is the id of img
 		 * */
+
         function clicke(x){
             canvas1.addImage(new Canvas.Img(x, {}));
         }
-        /**
+         
+         /**
          * this method is used to remove all images in the photobook
          * @method removeImg
          * */
         function removeImg(){
         	canvas1.removeImage();
+        	
         }
-        /** 
+        
+         /** 
          * this method is to save the img of canvas
          * @method canvasSrc
          * @param format{String} the suffix name of image
@@ -123,7 +126,7 @@
 <body id="canvasdemo" onLoad="">
 	<canvas id="canvid1"></canvas>
 
-	<img id="bg" src="img/bg.jpg" />
+	<img id="bg" src="img/bg.png" width="600px" height="400px"/>
 	
 	
 </body>

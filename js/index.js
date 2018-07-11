@@ -49,12 +49,12 @@ function PreviewImage(imgFile) {
  */
 function Quicktypeset(){
 	var typeid = 1;
-	if(pathArray.length<6){
-		alert("至少需要10张图片");
+	if(pathArray.length<13){
+		alert("至少需要12张图片");
 		return false;
 	}
 	
-	for (;typeid<=10;typeid++){
+	for (;typeid<=12;typeid++){
 		var img = document.createElement("img");
         imgcount++;
         var x = "imgtest"+typeid+"and" +imgcount;
