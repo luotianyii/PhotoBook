@@ -23,8 +23,9 @@ body {
 	justify-content: center;
 	align-items: flex-start;
 	width: 100%;
-	min-width: 1100px;
-	height: 700px;
+	min-width: 1350px;
+	height: 100%;
+	min-height: 720px;
 	margin: 0 auto;
 	padding: 10px;
 }
@@ -52,7 +53,7 @@ body {
 	flex-direction: flex-start;
 	justify-content: flex-start;
 	align-items: center;
-	width: 700px;
+	width: 900px;
 	padding:10px;
 }
 #box{
@@ -62,8 +63,8 @@ body {
 	flex-direction: center;
 	justify-content: center;
 	align-items: center;
-	width: 700px;
-	height: 700px;
+	width: 900px;
+	height: 720px;
 }
 
 
