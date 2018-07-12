@@ -505,7 +505,7 @@ var Canvas = window.Canvas || {};
 		context.rotate(oImg.theta);
 		context.scale(oImg.scalex, oImg.scaley);
 		
-		this.drawBorder(context, oImg, offsetX, offsetY);
+//		this.drawBorder(context, oImg, offsetX, offsetY);
 		
 		var originalImgSize = oImg.getOriginalSize();
 		
