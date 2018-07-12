@@ -18,18 +18,22 @@
         
         window.onload = function(){
         	for(var i = 1;i<=6;i++){
+        		var tempdiv = this.document.createElement("div");
         		var imgSrc = sessionStorage["photoBook"+i];
         		var temp = this.document.getElementById("mybook");
         		//temp.append("<div><img src = "  + "'" + imgSrc + "'"+ "/></div>");
         		var img = document.createElement("img");
+        		img.style.width="100%";
+        		img.style.height = "auto";
         		img.src = imgSrc;
-        		temp.appendChild(img);
+        		tempdiv.appendChild(img);
+        		temp.appendChild(tempdiv);
         	}
         	$(function(){
 	            //single book
 	            $('#mybook').booklet({
 	            	width:1200,
-	            	height:600
+	            	height:440
 	            });
 	            //multiple books with ID's
 	            $('#mybook1, #mybook2').booklet();
@@ -40,7 +44,7 @@
     </script>
 	</head>
 	<body>		
-		<div class="a1">预览</div>
+		<div class="a1"><input type="button" name="close" value="关闭" onclick="window.close();" /></div>
 		<div id="mybook">
 	       </div>
 	</body>
