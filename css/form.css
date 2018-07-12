@@ -1,7 +1,9 @@
+@import url("http://fonts.googleapis.com/css?family=Lato");
 .ul_1 {
 	list-style-type: none;
+	float: left;
 	position: relative;
-	left: 20px;
+	left: 15px;
 	top: 20px;
 	width: 270px;
 	height: 40px;
@@ -9,43 +11,34 @@
 }
 
 .li_1 {
-	float: left;
 	text-align: center;
+	line-height: 45px;
+	cursor: pointer;
 	position: relative;
 	width: 70px;
-	border: 1px;
-	border-style: solid;
-	border-color: #C0C0C0;
-	margin: 0px 9px;
-}
-
-.a_1:link,
-.a_1:visited {
-	display: block;
-	text-decoration: none;
-	color: #000;
-	width: 70px;
-	height: 38px;
-	line-height: 40px;
-	background: #C0C0C0;
-}
-
-.a_1:hover {
-	color: #fff;
-	background: #777777;
+	height: 40px;
+	float: left;
+	background: #474644;
+	border-radius: 15px;
+	border-bottom: 5px solid #33322f;
+	border-left: 3px solid #000000;
+	margin: 0px 8px;
+	box-shadow: -3px 5px 10px 3px rgba(51, 50, 47, 0.5), 5px -5px 20px 10px rgba(51, 50, 47, 0.5) inset, 0px 2px 1px rgba(0, 0, 0, .7);
+	-webkit-transition: -webkit-box-shadow .15s ease-in-out;
 }
 
 .ul_2 {
 	list-style-type: none;
 	position: relative;
-	left: 20px;
-	top: 50px;
+	left: 11px;
+	top: 60px;
 	width: 270px;
 	padding: 0px;
 	display: none;
 }
 
 .li_2 {
+	float: left;
 	text-align: center;
 	position: relative;
 	width: 268px;
@@ -103,7 +96,7 @@
 .drag_1 {
 	cursor: pointer;
 	width: 268px;
-	height: 100px;
+	heightheight: 100px;
 }
 
 .drag_2 {
@@ -123,63 +116,41 @@
 	border: 1px solid black;
 }
 
-#navigation {
-	list-style-type: none;
-	position: absolute;
-	left: 40px;
-	top: 100px;
-	width: 270px;
+
+ul li i {
+	text-shadow: 0px 0px #504F4E, 0px 1px #424241, -1px 2px #353534, -2px 3px #282827, 0px 6px 5px rgba(51, 50, 47, 0.8);
+	color: #858482;
 }
 
-#navigation li {
-	float: left;
-	text-align: center;
-	position: relative;
-	width: 70px;
-	border: 1px;
-	border-style: solid;
-	border-color: #C0C0C0;
-	margin: 9px;
+
+/* Colors */
+
+.facebook:hover i {
+	text-shadow: 0px 0px #394C89, 0px 1px #32447A, -1px 2px #2C3B6A, -2px 3px #26335B, 0px 6px 5px rgba(51, 50, 47, 0.8), 0 0 1em #3f5598;
+	color: #3f5598;
 }
 
-#navigation li ul {
-	list-style-type: none;
-	position: absolute;
-	top: 50px;
-	width: 270px;
-	display: none;
+.twitter:hover i {
+	text-shadow: 0px 0px #34AEDF, 0px 1px #2E9AC6, -1px 2px #2987AE, -2px 3px #237495, 0px 6px 5px rgba(51, 50, 47, 0.8), 0 0 1em #3ac1f8;
+	color: #3ac1f8;
 }
 
-#navigation li ul li {
-	float: left;
-	position: relative;
-	width: 125px;
-	border: 1px;
-	border-style: solid;
-	border-color: #C0C0C0;
-	margin: 4px;
+.instagram:hover i {
+	text-shadow: 0px 0px #5C228E, 0px 1px #521E7E, -1px 2px #471B6F, -2px 3px #3D175F, 0px 6px 5px rgba(51, 50, 47, 0.8), 0 0 1em #66269e;
+	color: #66269e;
 }
 
-#navigation li a:link,
-#navigation li a:visited {
-	display: block;
-	text-decoration: none;
-	color: #000;
-	width: 70px;
-	height: 40px;
-	line-height: 40px;
-	background: white;
+
+ul li:hover i {
+	-webkit-transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
-#navigation li a:hover {
-	color: #fff;
-	background: lightblue;
-}
-
-#navigation li ul li a:link,
-#navigation li ul li a:visited {
-	display: block;
-	width: 125px;
-	height: 100px;
-	line-height: 100px;
+ul li:active {
+	border-bottom: 1px solid #33322f;
+	top: 5px;
+	border-left: 1px solid #000000;
+	margin-right: 2px;
+	box-shadow: -2px 4px 7px 1px rgba(51, 50, 47, 0.7), 5px -5px 20px 10px rgba(51, 50, 47, 0.5) inset, -1px 2px 1px rgba(0, 0, 0, .7);
+	z-index: -1;
 }

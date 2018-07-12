@@ -20,13 +20,13 @@ function makeImage(str, width, fontfa) {
 			var chart = str.substring(start, start + 1).split(" ");
 			chart = unique(chart).join("");
 			if(/^[a-zA-Z\d]$/.test(chart)) {
-				startX = startX + 8;
+				startX = startX + 30;
 			} else if(!chart) {
-				startX = startX + 6;
+				startX = startX + 24;
 			} else if(/^[,\.;'\?!:`~&-_\/\\]$/.test(chart)) {
-				startX = startX + 6;
+				startX = startX + 24;
 			} else {
-				startX = startX + 17;
+				startX = startX + 50;
 			}
 			start++;
 			if(start > strLenght) {
@@ -35,7 +35,7 @@ function makeImage(str, width, fontfa) {
 			}
 		}
 		startX = 10;
-		startY = startY + 20;
+		startY = startY + 40;
 		lines++;
 	}
 	canvas.height = (lines + 1) * 20;
@@ -48,17 +48,17 @@ function makeImage(str, width, fontfa) {
 		while(startX < (width - 17)) {
 			var chart = str.substring(start, start + 1).split(" ");
 			chart = unique(chart).join("");
-			ctx.font = "16px " + fontfa;
+			ctx.font = "42px " + fontfa;
 			ctx.fillText(chart, startX, startY);
 
 			if(/^[a-zA-Z\d]$/.test(chart)) {
-				startX = startX + 8;
+				startX = startX + 30;
 			} else if(!chart) {
-				startX = startX + 6;
+				startX = startX + 24;
 			} else if(/^[,\.;'\?!:`~&-_\/\\]$/.test(chart)) {
-				startX = startX + 6;
+				startX = startX + 24;
 			} else {
-				startX = startX + 17;
+				startX = startX + 50;
 			}
 
 			start++;
@@ -68,7 +68,7 @@ function makeImage(str, width, fontfa) {
 			}
 		}
 		startX = 10;
-		startY = startY + 20;
+		startY = startY + 40;
 	}
 	var dataurl = canvas.toDataURL('image/png');
 
