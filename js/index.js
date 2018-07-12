@@ -18,9 +18,9 @@ function PreviewImage(imgFile) {
        //定义图片路径 
        //var path;
        //添加显示图片的HTML元素
-       id += 1;
-       pathindex+=1;
-       $(".img-cont").append("<div><div id='"+id+"'><img src='' /></div><a class='hide delete-btn'>删除</a><a id = "+"'"+pathindex+"'" + "class='hide add-btn'>添加</a></div>");
+
+
+       
 
        //判断浏览器类型
        if(document.all){ 
@@ -32,12 +32,18 @@ function PreviewImage(imgFile) {
         document.getElementById(id).style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='scale',src=\"" + path + "\")";//使用滤镜效果 
        }else{
         //兼容其他浏览器 
-        path = URL.createObjectURL(imgFile.files[0]);
-        document.getElementById(id).innerHTML = "<img src='"+path+"' width='100' height='80' />";
+        for(var i=0; i< imgFile.files.length; i++){
+        	pathindex+=1;
+            id += 1;
+            $(".img-cont").append("<div><div id='"+id+"'><img src='' /></div><a class='hide delete-btn'>删除</a><a id = "+"'"+pathindex+"'" + "class='hide add-btn'>添加</a></div>");
+            path = URL.createObjectURL(imgFile.files[i]);
+            document.getElementById(id).innerHTML = "<img src='"+path+"' width='100' height='80' />";
+            pathArray[pathindex] = path;
+        }
        }
        //重置表单
        resetForm(imgFile);
-       pathArray[pathindex] = path;
+
     } 
 }
 
