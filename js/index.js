@@ -69,8 +69,8 @@ function Quicktypeset(){
         
         
         if(img.complete){
-        	img.width = img.width/6;
-        	img.height = img.height/6;
+        	img.width = img.width/4;
+        	img.height = img.height/4;
         }
 
         var divid = "content"+parseInt((typeid+1)/2);
@@ -124,8 +124,8 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
         
         
         if(img.complete){
-        	img.width = img.width/6;
-        	img.height = img.height/6;
+        	img.width = img.width/4;
+        	img.height = img.height/4;
         }
 
         var divid = $('#content').attr('class');
