@@ -104,9 +104,6 @@
 				var word = prompt("请输入文字", "Harry Potter");
 				if(word != null && word != "") {
 					var wordImageSrc = makeImage(word, word.length * 50, fontfa);
-					var imgtest = document.createElement("img");
-					imgtest.src = wordImageSrc;
-					document.body.appendChild(imgtest);
 					wordADD(wordImageSrc);
 				}
 			}

@@ -190,14 +190,12 @@ function wordImageAdd(src){
         img.src = src;
         img.setAttribute("id",x);
         
-        if(img.complete){
-        	/*img.setAttribute("width",450);
-        	img.setAttribute("height",60);*/
-        }
-
-        var divid = $('#content').attr('class');
-        //alert(divid);
-
-        document.getElementById('myFrame'+divid).contentWindow.document.body.appendChild(img);
-        document.getElementById('myFrame'+divid).contentWindow.clicke(x);
+		img.onload = function(){
+	        var divid = $('#content').attr('class');
+	        //alert(divid);
+	        img.onload = null;//解决不同浏览器之间的兼容问题
+	
+	        document.getElementById('myFrame'+divid).contentWindow.document.body.appendChild(img);
+	        document.getElementById('myFrame'+divid).contentWindow.clicke(x);
+       }
 }
