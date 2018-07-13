@@ -48,7 +48,7 @@ function makeImage(str, width, fontfa) {
 		while(startX < (width - 17)) {
 			var chart = str.substring(start, start + 1).split(" ");
 			chart = unique(chart).join("");
-			ctx.font = "42px " + fontfa;
+			ctx.font = "40px " + fontfa;
 			ctx.fillText(chart, startX, startY);
 
 			if(/^[a-zA-Z\d]$/.test(chart)) {
