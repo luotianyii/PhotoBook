@@ -1,3 +1,7 @@
+  /*
+   * 作者：张凯翔
+   * 描述：缩略图区域
+   */
   .img-cont{
     position: relative;
   	top: 90px;
@@ -5,7 +9,7 @@
     height:500px;
     border:2px solid #317ef3;
     margin:10px auto;
-    display: none;
+    display: block;
   }
 
   .img-cont>div{

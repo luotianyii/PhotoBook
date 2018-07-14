@@ -1,5 +1,5 @@
 /*作者：陈毅
- * 描述：主页的右边展示区删除和预览按钮的样式
+ * 描述：主页的右边展示区删除、预览和导出按钮的样式
  */
 
 .demo{
@@ -38,7 +38,7 @@
 
 	
 	color: #fff;
-	font-size: 10px;
+	font-size: 15px;
 	text-decoration: none;
 	text-align: center;
 	line-height: 1;
@@ -151,7 +151,7 @@
 
 	
 	color: #fff;
-	font-size: 10px;
+	font-size: 15px;
 	text-decoration: none;
 	text-align: center;
 	line-height: 1;
@@ -263,7 +263,7 @@
 
 	
 	color: #fff;
-	font-size: 10px;
+	font-size: 15px;
 	text-decoration: none;
 	text-align: center;
 	line-height: 1;

@@ -17,6 +17,7 @@
 			 * this method is to control the visiblity of each menu
 			 * @method showAndhideSubMenu
 			 * @param num{int} the number of subMenu
+			 * 作者：龚成柱
 			 * */
 			//显示和隐藏子菜单
 			function showAndhideSubMenu(num) {
@@ -46,7 +47,6 @@
 			/**
 			 * this method is to use the method clear() to clear the photobook
 			 * @method clearPhotoBook
-			 * @author 邓泽生
 			 * */
 			function clearPhotoBook() {
 				clear();
@@ -61,11 +61,7 @@
 			function wordADD(src){
 				wordImageAdd(src);
 			}
-			/**
-			 * this method is used to download the image of photobook
-			 * @method download
-			 * @author 邓泽生
-			 * */
+			
 			function download(){
 				for(var i = 0;i<6;i++){    //下载图片的方法
 					var imgData = document.getElementById('myFramecontent'+(i+1)).contentWindow.canvasSrc("png");		
@@ -104,12 +100,7 @@
 			function wordADD(src) {
 				wordImageAdd(src);
 			}
-			/**
-			 * this method is used to add the word image to the canvas
-			 * @author 龚成柱
-			 * @method clicked
-			 * @param fontfa{String} this is the font-family of word image
-			 * */
+
 			function clicked(fontfa) {
 				var word = prompt("请输入文字", "Everyday is a new day！");
 				if(word != null && word != "") {
@@ -128,6 +119,11 @@
 		<div id="outer">
 			<div id="inner">
 				<div id="controls">
+					<!--
+                    	作者：龚成柱
+                    	时间：2018-07-14
+                    	描述：主页左侧的文字、装饰和图片按钮
+                    -->
 					<ul class="ul_1">
 						<li class="li_1 twitter" onmousedown="showAndhideSubMenu(0)">
 							<i style="font-size: 20px;">文字</i>
@@ -205,7 +201,11 @@
 
 						<script src="js/jquery-1.11.3.min.js"></script>
 						<script src="js/index.js"></script>
-
+						<!--
+                        	作者：陈毅
+                        	时间：2018-07-14
+                        	描述：主页右侧：删除，预览，导出按钮；照片书编辑区，图片分页
+                        -->
 						<div id="container">
 							<div class="demo">
 
@@ -243,7 +243,11 @@
 								<div id="content6" class="hidecontent"><iframe src="appear6.html" width="1000px" height="600px" scrolling="no" id="myFramecontent6" frameborder="0"></iframe></div>
 							</div>
 							<div id="title">
-
+								<!--
+                                	作者：陈毅
+                                	时间：2018-07-14
+                                	描述：分页，通过点击图片实现选择页面
+                                -->
 								<ul>
 									<li id="tag1">
 										<a href="#" onclick="switchTag('tag1','content1');this.blur();" class="selectli1"><span class="selectspan1">
