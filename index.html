@@ -46,6 +46,7 @@
 			/**
 			 * this method is to use the method clear() to clear the photobook
 			 * @method clearPhotoBook
+			 * @author 邓泽生
 			 * */
 			function clearPhotoBook() {
 				clear();
@@ -60,7 +61,11 @@
 			function wordADD(src){
 				wordImageAdd(src);
 			}
-			
+			/**
+			 * this method is used to download the image of photobook
+			 * @method download
+			 * @author 邓泽生
+			 * */
 			function download(){
 				for(var i = 0;i<6;i++){    //下载图片的方法
 					var imgData = document.getElementById('myFramecontent'+(i+1)).contentWindow.canvasSrc("png");		
@@ -99,7 +104,12 @@
 			function wordADD(src) {
 				wordImageAdd(src);
 			}
-
+			/**
+			 * this method is used to add the word image to the canvas
+			 * @author 龚成柱
+			 * @method clicked
+			 * @param fontfa{String} this is the font-family of word image
+			 * */
 			function clicked(fontfa) {
 				var word = prompt("请输入文字", "Harry Potter");
 				if(word != null && word != "") {

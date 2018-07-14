@@ -18,10 +18,6 @@ function PreviewImage(imgFile) {
        //定义图片路径 
        //var path;
        //添加显示图片的HTML元素
-
-
-       
-
        //判断浏览器类型
        if(document.all){ 
        //兼容IE
@@ -59,7 +55,6 @@ function Quicktypeset(){
 		alert("至少需要12张图片");
 		return false;
 	}
-	
 	for (;typeid<=12;typeid++){
 		var img = document.createElement("img");
         imgcount++;
@@ -97,6 +92,7 @@ var imgcount = 1
 /**
  * this method is used to control the visiblity of some button
  * and function of add and remove image to the canvas
+ * @author 邓泽生
  * */
 //控制"按钮"显示与隐藏
 $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
@@ -141,6 +137,7 @@ $(".img-cont").off("mouseenter","div").on("mouseenter","div",function(){
 /**
  * this method is used to clear the photobook
  * @method clear
+ * @author 邓泽生
  * */
 function clear(){
 	//alert("清空开始");
@@ -157,6 +154,7 @@ function clear(){
 })*/
 /**
  * this method is used to add the decoration to the photobook
+ * @author 邓泽生
  * */
 //用jquery遍历每个元素然后添加对应的点击方法
 var imgArray = jQuery(".li_3");
@@ -181,15 +179,19 @@ jQuery.each(imgArray, function(){
  	})
 });
 
-
-
+/**
+ * this method is used to add wordImg into canvas
+ * @method wordImageAdd
+ * @param src{String} the src is the src of image 
+ * @author 邓泽生
+ * */
 function wordImageAdd(src){
         var img = document.createElement("img");
         imgcount++;
         var x = "wordtest"+ "and" +imgcount;
         img.src = src;
         img.setAttribute("id",x);
-        
+        //解决部分图片未加载完成就导入canvas以至于长宽都是0的问题
 		img.onload = function(){
 	        var divid = $('#content').attr('class');
 	        //alert(divid);

@@ -1,4 +1,4 @@
-/*作者：陈毅
+/* 作者：陈毅
  * 描述：分页函数，点击图片后获取图片tag跳转显示相应content
  */
 function switchTag(tag, content) {

@@ -94,10 +94,12 @@
 		
 		
 		YAHOO.util.Event.on(window, 'load', CanvasDemo.init, CanvasDemo, true);
+		
 		/**
 		 * this method is to add the image to the canvas
 		 * @method clicke
 		 * @param x{string} the x is the id of img
+		 * @author 邓泽生
 		 * */
 
         function clicke(x){
@@ -107,6 +109,7 @@
          /**
          * this method is used to remove all images in the photobook
          * @method removeImg
+         * @author 邓泽生
          * */
         function removeImg(){
         	canvas1.removeImage();
@@ -117,6 +120,7 @@
          * this method is to save the img of canvas
          * @method canvasSrc
          * @param format{String} the suffix name of image
+         * @author 邓泽生
          * */
         function canvasSrc(format){
         	return canvas1.canvasTo(format);
