@@ -1,3 +1,13 @@
+
+/**
+ * this method is using canvas to make text to image
+ * reference to http://www.codeweblog.com/%E5%88%A9%E7%94%A8canvas%E6%8A%8A%E4%B8%80%E6%AE%B5%E6%96%87%E5%AD%97%E7%94%9F%E6%88%90%E4%B8%BA%E5%9B%BE%E7%89%87/
+ * @author 龚成柱
+ * @method makeImage
+ * @param str{String} the string of text
+ * @param width{int} the width of the image
+ * @param fontfa{String} the font-family of text
+ * */
 function makeImage(str, width, fontfa) {
 	width = width || 450;
 	height = 450;
