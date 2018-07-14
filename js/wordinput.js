@@ -11,7 +11,7 @@ function makeImage(str, width, fontfa) {
 
 	var start = 0,
 		startX = 10,
-		startY = 30,
+		startY = 50,
 		hasLine = true,
 		lines = 1;
 
@@ -20,13 +20,13 @@ function makeImage(str, width, fontfa) {
 			var chart = str.substring(start, start + 1).split(" ");
 			chart = unique(chart).join("");
 			if(/^[a-zA-Z\d]$/.test(chart)) {
-				startX = startX + 30;
+				startX = startX + 24;
 			} else if(!chart) {
-				startX = startX + 24;
+				startX = startX + 18;
 			} else if(/^[,\.;'\?!:`~&-_\/\\]$/.test(chart)) {
-				startX = startX + 24;
+				startX = startX + 18;
 			} else {
-				startX = startX + 50;
+				startX = startX + 40;
 			}
 			start++;
 			if(start > strLenght) {
@@ -42,7 +42,7 @@ function makeImage(str, width, fontfa) {
 
 	start = 0;
 	startX = 10;
-	startY = 30;
+	startY = 50;
 	hasLine = true;
 	while(hasLine) {
 		while(startX < (width - 17)) {
@@ -52,13 +52,13 @@ function makeImage(str, width, fontfa) {
 			ctx.fillText(chart, startX, startY);
 
 			if(/^[a-zA-Z\d]$/.test(chart)) {
-				startX = startX + 30;
+				startX = startX + 24;
 			} else if(!chart) {
-				startX = startX + 24;
+				startX = startX + 18;
 			} else if(/^[,\.;'\?!:`~&-_\/\\]$/.test(chart)) {
-				startX = startX + 24;
+				startX = startX + 18;
 			} else {
-				startX = startX + 50;
+				startX = startX + 40;
 			}
 
 			start++;
