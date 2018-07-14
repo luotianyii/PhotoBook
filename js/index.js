@@ -8,6 +8,7 @@ var pathArray = new Array();
  * this method is use to add image to the div of index.html
  * @method PreviewImage
  * @param imgFile{String} the src of img which need to be added into the canvas
+ * @author 韩国彪
  */
 function PreviewImage(imgFile) { 
     var pattern = /(\.*.jpg$)|(\.*.png$)|(\.*.jpeg$)|(\.*.gif$)|(\.*.bmp$)/;      
@@ -48,6 +49,8 @@ function PreviewImage(imgFile) {
 /**
  * this function is used to do Fast sorting of image
  * @method Quicktypeset
+ * @param
+ * @author 韩国彪
  */
 function Quicktypeset(){
 	var typeid = 1;
@@ -81,6 +84,7 @@ function Quicktypeset(){
  * this function is to reset the form of images to add the same iamge
  * @method resetForm
  * @param imgFile{String} this is the src path of image
+ * @author 韩国彪
  * */
 //重置表单,允许用户连续添加相同的图片
 function resetForm(imgFile){

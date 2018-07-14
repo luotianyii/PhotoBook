@@ -1,5 +1,6 @@
 var Canvas = window.Canvas || {};
 
+
 (function () {
 
 	/**
@@ -12,11 +13,10 @@ var Canvas = window.Canvas || {};
 	Canvas.Element = function() {};
 	
 	/**
-	 * Constant for the default CSS class name that represents a Canvas
+	 * Constant for the default CSS class name 
 	 * @property Canvas.Element.CSS_CANVAS
-	 * @static
-	 * @final
 	 * @type String
+	 * @author 韩国彪
 	 */
 	/// Canvas.Element.CSS_CANVAS = "canvas-module";	
 	Canvas.Element.prototype.fillBackground = true;
@@ -25,46 +25,34 @@ var Canvas = window.Canvas || {};
 	Canvas.Element.prototype.polaroid = false;
 	Canvas.Element.prototype._backgroundImg = null;
 	
-	/**
-	 * The object literal containing mouse position if clicked in an empty area (no image)
-	 * @property _groupSelector
-	 * @type object
-	 */
+
+	//The object literal containing mouse position if clicked in an empty area (no image)
+
 	Canvas.Element.prototype._groupSelector = null;
 	
-	/**
-	 * The array element that contains all the images of the canvas
-	 * @property _aImages
-	 * @type object
-	 */
+
+	//The array element that contains all the images of the canvas
+
+
 	Canvas.Element.prototype._aImages = null;
 	
-	/**
-	 * The element that references the canvas interface implementation
-	 * @property _oContext
-	 * @type object
-	 */
+
+	//The element that references the canvas interface implementation
+
 	Canvas.Element.prototype._oContext = null;
 	
-	/**
-	 * The main element that contains the canvas
-	 * @property _oElement
-	 * @type object
-	 */
+
+	// The main element that contains the canvas
+
 	Canvas.Element.prototype._oElement = null;
 
-	/**
-	 * The object literal containing config parameters
-	 * @property _oConfig
-	 * @type object
-	 */
+	// The object literal containing config parameters
+
 	Canvas.Element.prototype._oConfig = null;
 	
-	/**
-	 * The object literal containing the current x,y params of the transformation
-	 * @property _currentTransform
-	 * @type object
-	 */
+
+	// The object literal containing the current x,y params of the transformation
+
 	Canvas.Element.prototype._currentTransform = null;
 	
 	/**
