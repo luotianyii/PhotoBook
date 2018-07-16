@@ -103,8 +103,9 @@
 
 			function clicked(fontfa) {
 				var word = prompt("请输入文字", "Everyday is a new day！");
+				var color = document.getElementById("wordcolor").value;
 				if(word != null && word != "") {
-					var wordImageSrc = makeImage(word, word.length * 50, fontfa);
+					var wordImageSrc = makeImage(word, word.length * 50, fontfa, color);
 					wordADD(wordImageSrc);
 				}
 			}
@@ -139,6 +140,7 @@
 						</li>
 					</ul>
 					<ul class="ul_2">
+					请选择文字颜色<input type = "color" value='#66ccff' id = 'wordcolor'/>
 						<li class="li_2">
 							<img class="drag_1" src="img/font/1.png" onclick="clicked('Microsoft YaHei')" draggable="true" />
 						</li>

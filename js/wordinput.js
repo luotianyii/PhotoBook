@@ -8,7 +8,7 @@
  * @param width{int} the width of the image
  * @param fontfa{String} the font-family of text
  * */
-function makeImage(str, width, fontfa) {
+function makeImage(str, width, fontfa, color) {
 	width = width || 450;
 	height = 450;
 	fontfa = fontfa || "Microsoft YaHei";
@@ -58,6 +58,7 @@ function makeImage(str, width, fontfa) {
 		while(startX < (width - 17)) {
 			var chart = str.substring(start, start + 1).split(" ");
 			chart = unique(chart).join("");
+			ctx.fillStyle = color;
 			ctx.font = "40px " + fontfa;
 			ctx.fillText(chart, startX, startY);
 
