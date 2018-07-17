@@ -51,51 +51,48 @@
 			function clearPhotoBook() {
 				clear();
 			}
-						
-			
-			
-			function wordClicked(){
-				var wordWindow = window.open ('wordinput.html', 'newwindow', 'height=300, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no');		
+
+			function wordClicked() {
+				var wordWindow = window.open('wordinput.html', 'newwindow', 'height=300, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no');
 			}
-			
-			function wordADD(src){
+
+			function wordADD(src) {
 				wordImageAdd(src);
 			}
-			
-			function download(){
-				for(var i = 0;i<6;i++){    //下载图片的方法
-					var imgData = document.getElementById('myFramecontent'+(i+1)).contentWindow.canvasSrc("png");		
-				    var MIME_TYPE = "image/png";			
-				    var imgURL = imgData;			
-				    var dlLink = document.createElement('a');
-				    dlLink.download = "photoBookImg"+ i;
-				    dlLink.href = imgURL;
-				    dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
-				    document.body.appendChild(dlLink);
-				    dlLink.click();
-				    document.body.removeChild(dlLink);
-				   }
+
+			function download() {
+				for(var i = 0; i < 6; i++) { //下载图片的方法
+					var imgData = document.getElementById('myFramecontent' + (i + 1)).contentWindow.canvasSrc("png");
+					var MIME_TYPE = "image/png";
+					var imgURL = imgData;
+					var dlLink = document.createElement('a');
+					dlLink.download = "photoBookImg" + i;
+					dlLink.href = imgURL;
+					dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+					document.body.appendChild(dlLink);
+					dlLink.click();
+					document.body.removeChild(dlLink);
+				}
 			}
 			/** 
 			 * this method is to open the yulan dialog
 			 * @method openDialog
 			 * */
-				//alert(storage.length);
-				//var newWindow = window.open(html,"_blank");
-				//var photoBookBody = newWindow.document.getElementById("mybook");
-				/*for(var i = 0;i<5;i++){    下载图片的方法
-							
-				    var MIME_TYPE = "image/jpeg";			
-				    var imgURL = imgSrcArray[i];			
-				    var dlLink = document.createElement('a');
-				    dlLink.download = "photoBookImg"+ i;
-				    dlLink.href = imgURL;
-				    dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
-				    document.body.appendChild(dlLink);
-				    dlLink.click();
-				    document.body.removeChild(dlLink);
-				}*/
-
+			//alert(storage.length);
+			//var newWindow = window.open(html,"_blank");
+			//var photoBookBody = newWindow.document.getElementById("mybook");
+			/*for(var i = 0;i<5;i++){    下载图片的方法
+						
+			    var MIME_TYPE = "image/jpeg";			
+			    var imgURL = imgSrcArray[i];			
+			    var dlLink = document.createElement('a');
+			    dlLink.download = "photoBookImg"+ i;
+			    dlLink.href = imgURL;
+			    dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+			    document.body.appendChild(dlLink);
+			    dlLink.click();
+			    document.body.removeChild(dlLink);
+			}*/
 
 			function wordADD(src) {
 				wordImageAdd(src);
@@ -110,13 +107,14 @@
 				}
 			}
 		</script>
+
 	</head>
 
 	<body>
-		 
+
 		<div id="header">
 			<audio autoplay="autoplay" loop="loop" src="music/Splash of flowers.mp3"></audio>
-			<img src="img/16.png" width="300px" height="80px"/></div>
+			<img src="img/16.png" width="300px" height="80px" /></div>
 		<div id="outer">
 			<div id="inner">
 				<div id="controls">
@@ -140,7 +138,8 @@
 						</li>
 					</ul>
 					<ul class="ul_2">
-					请选择文字颜色<input type = "color" value='#66ccff' id = 'wordcolor'/>
+						<font face="simhei"> &nbsp请选择文字颜色</font>
+						<input type="color" value='#66ccff' id='wordcolor' />
 						<li class="li_2">
 							<img class="drag_1" src="img/font/1.png" onclick="clicked('Microsoft YaHei')" draggable="true" />
 						</li>
@@ -186,13 +185,14 @@
 					<ul class="ul_2">
 						<li class="li_4">
 							<form>
-								<label for="input">上传文件</label>
+								<label for="input" style="display:inline-block;">上传文件</label>
 								<input id="input" type="file" multiple="multiple" onchange='PreviewImage(this)' style="display: none" />
 							</form>
 						</li>
-						<li class="li_4">
-							<a class="a_4" href="#" onmousedown='Quicktypeset()'>快速排版</a>
+						<li class="li_4" onclick='Quicktypeset()'>
+							快速排版
 						</li>
+
 					</ul>
 					<div class="img-cont" style="overflow-y: scroll;"></div>
 				</div>
@@ -217,10 +217,10 @@
 
 							</div>
 							<script>
-							    /**
-			 					* this method is to open the yulan dialog
-			 					* @method openDialog
-			 					* */
+								/**
+								 * this method is to open the yulan dialog
+								 * @method openDialog
+								 * */
 
 								function openDialog() {
 									var storage = window.sessionStorage;
@@ -233,7 +233,6 @@
 									}
 									window.open("yulan.html", "_blank");
 								}
-
 							</script>
 
 							<div id="content" class="content1">
@@ -252,27 +251,28 @@
                                 -->
 								<ul>
 									<li id="tag1">
-										<a href="#" onclick="switchTag('tag1','content1');this.blur();" class="selectli1"><span class="selectspan1">
+										<a href="###" onclick="switchTag('tag1','content1');this.blur();" class="selectli1"><span class="selectspan1">
 											<img src="img/bg.png" width="100px" height="60px"/> </span></a>
 									</li>
 									<li id="tag2">
-										<a href="#" onclick="switchTag('tag2','content2');this.blur();">
+										<a href="###" onclick="switchTag('tag2','content2');this.blur();">
 											<span><img src="img/bg2.png" width="100px" height="60px"/></span></a>
 									</li>
 									<li id="tag3">
-										<a href="#" onclick="switchTag('tag3','content3');this.blur();">
+										<a href="###" onclick="switchTag('tag3','content3');this.blur();">
 											<span><img src="img/bg3.png" width="100px" height="60px"/></span></a>
 									</li>
 									<li id="tag4">
-										<a href="#" onclick="switchTag('tag4','content4');this.blur();">
+										<a href="###" onclick="switchTag('tag4','content4');this.blur();">
 											<span><img src="img/bg4.png" width="100px" height="60px"/></span></a>
 									</li>
 									<li id="tag5">
-										<a href="#" onclick="switchTag('tag5','content5');this.blur();">
+										<a href="###" onclick="switchTag('tag5','content5');this.blur();">
 											<span><img src="img/bg5.png" width="100px" height="60px"/></span></a>
-									</li>																		</li>
+									</li>
+									</li>
 									<li id="tag6">
-										<a href="#" onclick="switchTag('tag6','content6');this.blur();">
+										<a href="###" onclick="switchTag('tag6','content6');this.blur();">
 											<span><img src="img/bg6.png" width="100px" height="60px"/></span></a>
 									</li>
 								</ul>
