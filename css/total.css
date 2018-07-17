@@ -38,16 +38,54 @@ body {
 	margin:0;
 }
 #controls{
-	background: #FFFFFF;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
 	width: 300px;
 	height: 700px;
 	left:5px;
-	border-radius:10px 10px 10px 10px;
-    z-index:1;
+	z-index:0;
+    
+    margin: 20px auto;
+    width: 300px;
+    padding: 10px;
+    position:relative;
+    background: -webkit-gradient(linear, 100% 100%, 50% 10%, from(#fff), to(#f3f3f3), color-stop(.1,#fff));
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 1px 1px 4px rgba(0,0,0, 0.1);
+    -webkit-border-bottom-right-radius: 60px 5px;
 }
+#controls:before{
+    content: '';
+    width: 98%;
+    z-index:-2;
+    height: 100%;
+    padding: 0 0 1px 0;
+    position: absolute;
+    bottom:0; right:0;
+    background: -webkit-gradient(linear, 0% 20%, 0% 92%, from(#fff), to(#f9f9f9), color-stop(.1,#fff));
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 1px 1px 8px rgba(0,0,0, 0.1);
+    -webkit-border-bottom-right-radius: 60px 5px;
+    -webkit-transform: skew(2deg,2deg)
+                        translate(3px,8px)
+}
+
+#controls:after{
+    content: '';
+    width: 98%;
+    z-index:-2;
+    height: 98%;
+    padding: 0 0 1px 0;
+    position: absolute;
+    bottom:0; right:0;
+    background: -webkit-gradient(linear, 0% 20%, 0% 100%, from(#f3f3f3), to(#f6f6f6), color-stop(.1,#fff));
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 0px 0px 8px rgba(0,0,0, 0.1);
+    -webkit-transform: skew(2deg,2deg)
+                        translate(-1px,2px)
+}
+
 #appear{
 	display: flex-start;
 	flex-direction: flex-start;
@@ -67,6 +105,7 @@ body {
 }
 
 
+
 ::-webkit-scrollbar {/*滚动条整体样式*/
         width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
         height: 1px;
@@ -81,3 +120,4 @@ body {
         border-radius: 10px;
         background: #EDEDED;
     }
+    
