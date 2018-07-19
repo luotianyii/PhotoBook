@@ -3,6 +3,7 @@ var id="1";
 var path;
 var pathindex = 0;
 var pathArray = new Array();
+var imgArray = jQuery(".li_3");
 
 /**
  * this method is use to add image to the div of index.html
@@ -78,6 +79,31 @@ function Quicktypeset(){
         document.getElementById('myFrame'+divid).contentWindow.clicke(x);
 //      img.prototype.left = 800;
 //      img.prototype.TOP = 800;
+
+
+
+	}
+	
+	var decImageSrcArray = document.getElementsByClassName("drag_2");
+	for(var i = 1;i<=6;i++){	
+		for(var j = 0;j<=2;j++){
+			
+			var number = Math.floor(Math.random()*7+1);
+				
+			//alert(decImageSrcArray[number].getAttribute("src"));
+			
+			var img = document.createElement("img");
+			imgcount++;
+			var x = "dec" + number + "img:" + imgcount;
+			img.src = decImageSrcArray[number].getAttribute("src");
+			img.setAttribute("id",x);
+			
+			img.setAttribute("width",799/10);
+        	img.setAttribute("height",832/10);
+							
+			document.getElementById('myFramecontent'+i).contentWindow.document.body.appendChild(img);
+        	document.getElementById('myFramecontent'+i).contentWindow.clicke(x);			
+       	}	
 	}
 }
 /**
@@ -161,7 +187,7 @@ function clear(){
  * @author 邓泽生
  * */
 //用jquery遍历每个元素然后添加对应的点击方法
-var imgArray = jQuery(".li_3");
+
 jQuery.each(imgArray, function(){
  	//alert(jQuery(this).find("img").attr("src"));
  	var decTemp = jQuery(this).find("img");
