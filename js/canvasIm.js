@@ -226,11 +226,11 @@ var Canvas = window.Canvas || {};
 		}
 		
 		if (oConfig.top == null) {
-			this.top = this.height / 2 + Math.random() * 250;
+			this.top = this.height / 2 + Math.random() * 430;
 		}
 		
 		if (oConfig.left == null) {
-			this.left = this.width / 2 + Math.random() * 400;
+			this.left = this.width / 2 + Math.random() * 750;
 		}
 	};
 	
